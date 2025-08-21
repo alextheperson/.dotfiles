@@ -110,7 +110,12 @@
 
       kicad
       inputs.dmm.packages.aarch64-linux.default
+      oh-my-posh
     ];
+  };
+
+  programs.bash = {
+    blesh.enable = true;
   };
 
   programs.sway.enable = true;
