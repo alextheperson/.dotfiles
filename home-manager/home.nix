@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, catppuccin, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -48,7 +48,11 @@
 
   programs.waybar.enable = true;
 
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    userEmail = "git@alexsol.is";
+    userName = "Alex Solis";
+  };
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
@@ -62,7 +66,29 @@
   programs.oh-my-posh = {
     enable = true;
     enableBashIntegration = true;
-    useTheme = "catppuccin";
+    useTheme = "catppuccin_macchiato";
+  };
+
+  programs.kitty = {
+    extraConfig = ''
+      map ctrl+c copy_and_clear_or_interrupt
+      map ctrl+v paste_from_clipboard
+      map ctrl+k clear_terminal reset active
+
+      cursor_stop_blinking_after 15.0
+
+      window_margin_width 10
+    '';
+  };
+
+  catppuccin = {
+    enable = true;
+    flavor = "macchiato";
+    accent = "blue";
+
+    nvim.enable = false;
+    waybar.enable = false;
+    kitty.enable = false;
   };
 
   # This value determines the Home Manager release that your
