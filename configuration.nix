@@ -57,6 +57,8 @@
     };
   };
 
+  services.blueman.enable = true;
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -88,34 +90,30 @@
     isNormalUser = true;
     initialPassword = "changeme";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      floorp
-      rofi-wayland
-      cliphist
-      dunst
-      webcord
-      hyprpaper
-      hyprpicker
-      nwg-look
-      blender
-      neofetch
-      fzf
-      clang
-      prusa-slicer
-      wayclip
-      jq
-      sourcegit
-      kiwix
-      unzip
+    # packages = with pkgs; [
+    #   floorp
+    #   rofi-wayland
+    #   cliphist
+    #   dunst
+    #   webcord
+    #   hyprpaper
+    #   hyprpicker
+    #   nwg-look
+    #   blender
+    #   neofetch
+    #   fzf
+    #   clang
+    #   prusa-slicer
+    #   wayclip
+    #   jq
+    #   sourcegit
+    #   kiwix
+    #   unzip
+    #   oh-my-posh
 
-      kicad
-      inputs.dmm.packages.aarch64-linux.default
-      oh-my-posh
-    ];
-  };
-
-  programs.bash = {
-    blesh.enable = true;
+    #   kicad
+    #   inputs.dmm.packages.aarch64-linux.default
+    # ];
   };
 
   programs.sway.enable = true;
@@ -123,24 +121,6 @@
     enable = true;
     withUWSM = true;
   };
-  services.hypridle.enable = true;
-  programs.hyprlock.enable = true;
-
-  programs.waybar.enable = true;
-  services.blueman.enable = true;
-
-  programs.git.enable = true;
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-  };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
-  programs.thunderbird.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
