@@ -35,13 +35,12 @@
   ];
 
   imports = [
-    "./shell.nix"
+    ./shell.nix
+    ./waybar.nix
   ];
 
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
-
-  programs.waybar.enable = true;
 
   programs.git = {
     enable = true;

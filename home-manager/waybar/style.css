@@ -1,0 +1,110 @@
+* {
+  border: none;
+  font-size: 12px;
+  font-family: "Fira Code";
+  color: #cdd6f4;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+#custom-logo {
+  padding: 0 5px;
+}
+
+.modules-right,
+.modules-center,
+.modules-left {
+  background: #1e1e2e;
+  border: 0px solid #585b70;
+  padding: 7px 0;
+}
+
+.modules-right {
+  padding-left: 5px;
+  border-radius: 10em 2em 2em 10em;
+}
+
+.modules-center {
+  border-radius: 10em;
+}
+
+.modules-left {
+  padding-right: 5px;
+  border-radius: 2em 10em 10em 2em;
+}
+
+#battery,
+#custom-clipboard,
+#custom-colorpicker,
+#custom-powerDraw,
+#bluetooth,
+#pulseaudio,
+#network,
+#disk,
+#memory,
+#backlight,
+#cpu,
+#temperature,
+#custom-weather,
+#idle_inhibitor,
+#jack,
+#tray,
+#window,
+#clock {
+  padding: 0px 8px;
+}
+
+.modules-left *:not(:first-child),
+.modules-right *:not(:first-child) {
+  border-left: 1px solid #585b70;
+}
+
+#temperature.critical,
+#pulseaudio.muted {
+  color: #FF0000;
+}
+
+#clock {
+  color: #5fd1fa;
+}
+
+#battery.charging {
+  color: #ffffff;
+  background-color: #26A65B;
+}
+
+#battery.warning:not(.charging) {
+  background-color: #ffbe61;
+  color: black;
+}
+
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #ffffff;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#workspaces {
+  padding: 0 3px;
+}
+
+#workspaces * {
+  padding: 0 3px;
+  margin: 0;
+  border-radius: 0;
+}
+
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
