@@ -34,14 +34,9 @@
     # inputs.dmm.packages.aarch64-linux.default
   ];
 
-
-  programs.bash = {
-    enable = true;
-    # blesh.enable = true;
-    bashrcExtra = ''
-      eval "$(oh-my-posh init bash)"
-    '';
-  };
+  imports = [
+    "./shell.nix"
+  ];
 
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
@@ -61,24 +56,6 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-  };
-
-  programs.oh-my-posh = {
-    enable = true;
-    enableBashIntegration = true;
-    useTheme = "catppuccin_macchiato";
-  };
-
-  programs.kitty = {
-    extraConfig = ''
-      map ctrl+c copy_and_clear_or_interrupt
-      map ctrl+v paste_from_clipboard
-      map ctrl+k clear_terminal reset active
-
-      cursor_stop_blinking_after 15.0
-
-      window_margin_width 10
-    '';
   };
 
   catppuccin = {
