@@ -44,10 +44,6 @@
 
   # experimental GPU drivers - needed for hyperland
   hardware = {
-    asahi = {
-      #   useExperimentalGPUDriver = true;
-      experimentalGPUInstallMode = "replace";
-    };
     graphics = {
       enable = true;
     };
@@ -128,7 +124,6 @@
     kitty
     btop
     lshw
-    # mesa-asahi-edge
     xdg-desktop-portal-hyprland
   ];
 
