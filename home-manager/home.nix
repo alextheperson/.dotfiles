@@ -16,7 +16,7 @@
     hyprpaper
     hyprpicker
 
-    nwg-look
+    # nwg-look
     neofetch
     btop
 
@@ -54,6 +54,17 @@
     enable = true;
     userEmail = "git@alexsol.is";
     userName = "Alex Solis";
+    extraConfig = {
+      credential = {
+        helper = "store";
+      };
+      pull = {
+        rebase = true;
+      };
+      init = {
+        defaultBranch = "main";
+      };
+    };
   };
 
   programs.direnv = {
@@ -64,6 +75,15 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+  };
+
+  gtk = {
+    enable = true;
+    theme.name = "Adwaita";
+    # iconTheme.name = "Adwaita";
+    font.name = "Liberation Sans 11";
+    # cursorTheme.name = "Adwaita";
+    # cursorTheme.size = 24;
   };
 
   catppuccin = {
