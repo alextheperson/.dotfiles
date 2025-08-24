@@ -43,11 +43,10 @@
   services.blueman-applet.enable = true;
   services.mako = {
     enable = true;
-    settings = {
-      borderSize = 2;
-      borderRadius = 18;
-      defaultTimeout = 30000;
-    };
+    anchor = "bottom-right";
+    borderSize = 2;
+    borderRadius = 18;
+    defaultTimeout = 30000;
   };
 
   services.hypridle.enable = true;
@@ -77,6 +76,7 @@
     nvim.enable = false;
     waybar.enable = false;
     kitty.enable = false;
+    btop.enable = true;
   };
 
   # This value determines the Home Manager release that your
