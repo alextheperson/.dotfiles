@@ -16,7 +16,6 @@
     hyprpaper
     hyprpicker
 
-    # nwg-look
     neofetch
     btop
 
