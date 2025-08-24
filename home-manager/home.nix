@@ -38,6 +38,7 @@
   imports = [
     ./shell.nix
     ./waybar.nix
+    ./hypr.nix
   ];
 
   services.blueman-applet.enable = true;
@@ -48,9 +49,6 @@
     borderRadius = 18;
     defaultTimeout = 30000;
   };
-
-  services.hypridle.enable = true;
-  programs.hyprlock.enable = true;
 
   programs.git = {
     enable = true;
@@ -76,7 +74,7 @@
     nvim.enable = false;
     waybar.enable = false;
     kitty.enable = false;
-    btop.enable = true;
+    hyprlock.enable = false;
   };
 
   # This value determines the Home Manager release that your
