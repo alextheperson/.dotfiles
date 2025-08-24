@@ -83,6 +83,11 @@
     font.name = "Liberation Sans 11";
     # cursorTheme.name = "Adwaita";
     # cursorTheme.size = 24;
+    gtk2.extraConfig = ''
+      gtk-application-prefer-dark-theme = 1
+    '';
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
   };
 
   catppuccin = {
