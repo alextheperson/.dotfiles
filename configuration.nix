@@ -2,27 +2,22 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ lib
-, config
-, pkgs
-, inputs
-, ...
-}: {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+{ lib, config, pkgs, inputs, ... }:
 
-      inputs.apple-silicon.nixosModules.apple-silicon-support
-    ];
+{
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+
+    inputs.apple-silicon.nixosModules.apple-silicon-support
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
 
   networking.hostName = "serafina"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   networking.wireless.iwd = {
     enable = true;
@@ -37,12 +32,9 @@
     WLR_DRM_DEVICES = "/dev/dri/card0";
   };
 
-  # Specify path to peripheral firmware files.
+  # Specify path to peripheral firmware files. - WARNING: NOT LEGAL TO SHARE
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
-  # Or disable extraction and management of them completely.
-  # hardware.asahi.extractPeripheralFirmware = false;
 
-  # experimental GPU drivers - needed for hyperland
   hardware = {
     graphics = {
       enable = true;
@@ -63,8 +55,6 @@
     layout = "us";
     variant = "dvorak";
   };
-
-
   # Use same config for linux console
   console.useXkbConfig = true;
 
@@ -86,30 +76,6 @@
     isNormalUser = true;
     initialPassword = "changeme";
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    # packages = with pkgs; [
-    #   floorp
-    #   rofi-wayland
-    #   cliphist
-    #   dunst
-    #   webcord
-    #   hyprpaper
-    #   hyprpicker
-    #   nwg-look
-    #   blender
-    #   neofetch
-    #   fzf
-    #   clang
-    #   prusa-slicer
-    #   wayclip
-    #   jq
-    #   sourcegit
-    #   kiwix
-    #   unzip
-    #   oh-my-posh
-
-    #   kicad
-    #   inputs.dmm.packages.aarch64-linux.default
-    # ];
   };
 
   programs.sway.enable = true;
@@ -121,10 +87,6 @@
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
-    kitty
-    btop
-    lshw
-    xdg-desktop-portal-hyprland
   ];
 
   fonts.packages = with pkgs; [

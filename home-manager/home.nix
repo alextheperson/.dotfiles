@@ -10,14 +10,15 @@
     cliphist
     wayclip
 
-    dunst
     rofi-wayland
+    libnotify
 
     hyprpaper
     hyprpicker
 
     nwg-look
     neofetch
+    btop
 
     fzf
     clang
@@ -39,6 +40,16 @@
     ./waybar.nix
   ];
 
+  services.blueman-applet.enable = true;
+  services.mako = {
+    enable = true;
+    settings = {
+      borderSize = 2;
+      borderRadius = 18;
+      defaultTimeout = 30000;
+    };
+  };
+
   services.hypridle.enable = true;
   programs.hyprlock.enable = true;
 
@@ -47,6 +58,7 @@
     userEmail = "git@alexsol.is";
     userName = "Alex Solis";
   };
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
