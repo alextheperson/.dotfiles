@@ -1,106 +1,171 @@
-{
-  "layer": "top", "position": "top",
-  "height": 36,
-  "modules-left": ["custom/logo", "clock", "custom/weather", "disk", "memory", "cpu", "temperature", "custom/powerDraw", "hyprland/window" ],
-  "modules-center": [ "hyprland/workspaces" ],
-  "modules-right": ["tray", "custom/clipboard", "backlight", "custom/colorpicker", "bluetooth", "pulseaudio", "network", "battery" ],
-  "reload_style_on_change":true,
-  "exclusive": false,
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "height": 23,
+    "modules-left": [ "custom/logo", "clock", "custom/weather"],
+    "modules-center": [ "hyprland/workspaces" ],
+    "modules-right": [ "disk", "memory", "cpu", "temperature", "custom/powerDraw", "backlight", "pulseaudio", "custom/colorpicker", "bluetooth", "network", "battery" ],
+    "reload_style_on_change":true,
+    "exclusive": false,
 
-  "custom/logo": {
-    "format": "alex@serafina",
-    "tooltip": false
-  },
-
-  "hyprland/workspaces": {
-	"format": "{icon}",
-	"format-icons": {
-		"1": "1",
-		"2": "2",
-		"3": "3",
-		"4": "4",
-		"5": "5",
-		"6": "6",
-		"7": "7",
-		"8": "8",
-		"9": "9",
-		"10": "0",
-		"active": "",
-		"default": "" 
-	},
-       "persistent-workspaces": {
-         "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-       }
-},
-
-"idle_inhibitor":{
-  "format": "{icon}",
-  "format-icons": {
-    "activated":"󰈈",
-    "deactivated":"󰈉"
-  }
-},
-
-"custom/weather": {
-  "format": "{}",
-  "return-type": "json",
-  "exec": "~/.config/waybar/scripts/weather.sh",
-  "interval": 10,
-  "tooltip": true
-},
-
-"custom/clipboard":{
-  "format":"",
-  "on-click": "cliphist list | rofi -dmenu | cliphist decode | wl-copy",
-  "interval":86400
-},
-
-
-"clock": {
-      "format": "{:%H:%M:%S %a %d-%b-%y}",
-      "interval":1,
-      "tooltip-format": "\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "calendar-weeks-pos": "right",
-      "today-format": "<span color='#7645AD'><b><u>{}</u></b></span>",
-      "format-calendar": "<span color='#aeaeae'><b>{}</b></span>",
-      "format-calendar-weeks": "<span color='#aeaeae'><b>W{:%V}</b></span>",
-      "format-calendar-weekdays": "<span color='#aeaeae'><b>{}</b></span>"
- },
-
-"bluetooth": {
-  "format-on": "",
-  "format-off": "󰂲",
-  "format-disabled": "󰂲",
-  "format-connected": "󰂴",
-  "format-connected-battery": "󰂴 {device_battery_percentage}%",
-  "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-  "on-click": "rofi-bluetooth",
-}, 
-
-"network": {
-      "format-wifi": " ",
-      "format-ethernet":" ",
-      "format-disconnected": " ",
-      "tooltip-format": "{ipaddr}",
-      "tooltip-format-wifi": "{essid} ({signalStrength}%)  | {ipaddr}",
-      "tooltip-format-ethernet": "{ifname} 🖧 | {ipaddr}",
-      "on-click": "networkmanager_dmenu"
+    "custom/logo": {
+      "format": " alex<span color=\"#cad3f5\">@</span>serafina ",
+      "tooltip": false
     },
 
-"battery": {
-    "interval":1,
+    "clock": {
+        "format": "{:%H:%M:%S %a %d-%b-%y} ",
+        "interval":1,
+        "tooltip-format": "\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar-weeks-pos": "right",
+        "today-format": "<span color='#7645AD'><b><u>{}</u></b></span>",
+        "format-calendar": "<span color='#aeaeae'><b>{}</b></span>",
+        "format-calendar-weeks": "<span color='#aeaeae'><b>W{:%V}</b></span>",
+        "format-calendar-weekdays": "<span color='#aeaeae'><b>{}</b></span>"
+    },
+
+
+    "custom/weather": {
+      "format": "{} ",
+      "return-type": "json",
+      "exec": "~/.config/waybar/scripts/weather.sh",
+      "interval": 10,
+      "tooltip": true
+    },
+
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "format-icons": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5",
+        "6": "6",
+        "7": "7",
+        "8": "8",
+        "9": "9",
+        "10": "0",
+        //"active": "",
+        //"default": "" 
+      },
+      "persistent-workspaces": {
+        "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      }
+    },
+
+    "disk": {
+      "interval": 30,
+      "format": "\uf0a0 {percentage_free}% ",
+      "tooltip-format": "{free} / {total}\n{used} ({percentage_used}%) used",
+      "path": "/",
+    },
+
+    "memory": {
+      "format": "\uf538 {percentage}% ",
+      "on-click": "foot btop",
+    },
+
+    "cpu": {
+      "interval": 1,
+      "format": "<span background=\"#363a4f\">{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}<span color=\"#b7bdf8\">{icon8}{icon9}</span></span> ",
+      "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+      "markup": true,
+      "on-click": "foot btop",
+    },
+
+    "temperature": {
+      "format": " {temperatureC}°C ",            
+      "format-critical": " {temperatureC}°C",
+      "interval": 1,
+      "critical-threshold": 80,
+      "on-click": "foot btop",
+    },
+
+    "custom/powerDraw": {
+      "format": "\uf0e7 {}w ",
+      "interval": 1,
+      "exec": "~/.config/waybar/scripts/powerdraw.sh",
+      "return-type": "json",
+      "on-click": "foot btop",
+    },
+
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon} {percent}% ",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+      ],
+    },
+
+    "custom/colorpicker": {
+      "format": "{} ",
+      "return-type": "json",
+      "interval": "once",
+      "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
+      "on-click": "sleep 1 && ~/.config/waybar/scripts/colorpicker.sh",
+      "signal": 1
+    },
+
+    "bluetooth": {
+      "format-on": " ",
+      "format-off": "󰂲 ",
+      "format-disabled": "󰂲 ",
+      "format-connected": "󰂴 ",
+      "format-connected-battery": "󰂴 {device_battery_percentage}% ",
+      "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    }, 
+
+    "pulseaudio": {
+      "format": "{icon} {volume}% ",
+      "format-bluetooth":"󰂰 ",
+      "format-muted": " ",
+      "format-icons": {
+        "headphones": "",
+        "bluetooth": "󰥰",
+        "handsfree": "",
+        "headset": "󱡬",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["\udb81\udcc3"]
+      },
+      "tooltip-format": "{icon} {volume}%\n{desc}"
+    },
+
+    "network": {
+          "format-wifi": "  {essid} ",
+          "format-ethernet":" ",
+          "format-disconnected": " ",
+          "tooltip-format": "{ipaddr}",
+          "tooltip-format-wifi": "{essid} ({signalStrength}%)  | {ipaddr}",
+          "tooltip-format-ethernet": "{ifname} 🖧 | {ipaddr}",
+          "on-click": "networkmanager_dmenu"
+        },
+
+    "battery": {
+        "interval":1,
         "states": {
             "good": 80,
-            "warning": 25,
-            "critical": 10
+            "warning": 20,
+            "critical": 5
         },
-        "format": "{capacity}% {icon}",
+        "format": "{icon} {time:.11} {capacity}% ",
         "format-charging": "{capacity}% 󰂄 ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+        "format-plugged": "{capacity}%  ",
             "format-icons": [
           "󰁻",
           "󰁼",
@@ -110,108 +175,24 @@
           "󰁹"
         ],
     },
-
-"backlight": {
-  "device": "intel_backlight",
-  "format": "{icon}",
-  "format-icons": [
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
-  ],
-},
-
-"disk": {
-    "interval": 30,
-    "format": " {percentage_used}%",
-    "path": "/"
   },
 
-  "custom/colorpicker": {
-    "format": "{}",
-    "return-type": "json",
-    "interval": "once",
-    "exec": "~/.config/waybar/scripts/colorpicker.sh -j",
-    "on-click": "sleep 1 && ~/.config/waybar/scripts/colorpicker.sh",
-    "signal": 1
-  },
+  {
+    "layer": "top",
+    "position": "bottom",
+    "height": 30,
+    "modules-left": [ "wlr/taskbar"],
+    "reload_style_on_change":true,
+    "exclusive": false,
 
-  "cpu": {
-      "interval": 1,
-      "format": " {usage}%",
-      "min-length": 6,
-      "max-length": 6,
-      "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
- },
-
-"memory": {
-  "format": " {percentage}%"
-},
-
- "hyprland/window": {
-    "format": "( {class} )",
-},
-
-"temperature": {
-  "format": " {temperatureC}°C",            
-  "format-critical": " {temperatureC}°C",
-  "interval": 1,
-  "critical-threshold": 80,
-  "on-click": "foot btop",
- },
-
-"pulseaudio": {
-  "format": "{volume}% {icon}",
-  "format-bluetooth":"󰂰",
-  "format-muted": "<span font='12'></span>",
-  "format-icons": {
-    "headphones": "",
-    "bluetooth": "󰥰",
-    "handsfree": "",
-    "headset": "󱡬",
-    "phone": "",
-    "portable": "",
-    "car": "",
-    "default": ["\udb81\udcc3"]
-  },
-  "justify": "center",
-  "on-click": "amixer sset Master toggle",
-  "on-click-right": "pavucontrol",
-  "tooltip-format": "{icon}  {volume}%"
-},
-
-"jack": {
-    "format": "{} 󱎔",
-    "format-xrun": "{xruns} xruns",
-    "format-disconnected": "DSP off",
-    "realtime": true
-},
-
-"tray": {
-    "icon-size": 14,
-    "spacing": 10
-},
-
-"upower": {
-    "show-icon": false,
-    "hide-if-empty": true,
-    "tooltip": true,
-    "tooltip-spacing": 20
-},
-
-  "custom/powerDraw": {
-    "format": "{}",
-    "interval": 1,
-    "exec": "~/.config/waybar/scripts/powerdraw.sh",
-    "return-type": "json"
+    "wlr/taskbar": {
+      "format": " {icon} <b>{name}</b> \n {title:.20} ",
+      "icon-size": 25,
+      "tooltip-format": "{title}",
+      "sort-by-app-id": true,
+      "on-click": "activate",
+      "on-click-middle": "close",
+      "markup": true,
+    },
   }
-
-}
-
+]

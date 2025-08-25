@@ -1,112 +1,152 @@
+/* Catppuccin Macchiato, if you can believe it */
+@define-color rosewater #f4dbd6;
+@define-color flamingo #f0c6c6;
+@define-color pink #f5bde6;
+@define-color mauve #c6a0f6;
+@define-color red #ed8796;
+@define-color maroon #ee99a0;
+@define-color peach #f5a97f;
+@define-color yellow #eed49f;
+@define-color green #a6da95;
+@define-color teal #8bd5ca;
+@define-color sky #91d7e3;
+@define-color sapphire #7dc4e4;
+@define-color blue #8aadf4;
+@define-color lavender #b7bdf8;
+@define-color text #cad3f5;
+@define-color subtext1 #b8c0e0;
+@define-color subtext0 #a5adcb;
+@define-color overlay2 #939ab7;
+@define-color overlay1 #8087a2;
+@define-color overlay0 #6e738d;
+@define-color surface2 #5b6078;
+@define-color surface1 #494d64;
+@define-color surface0 #363a4f;
+@define-color base #24273a;
+@define-color mantle #1e2030;
+@define-color crust #181926;
+
 * {
   border: none;
-  font-size: 12px;
   font-family: "Fira Code";
-  color: #cdd6f4;
-  min-height: 0;
-}
 
-window#waybar {
-  background: transparent;
-}
-
-#custom-logo {
-  padding: 0 5px;
-}
-
-.modules-right,
-.modules-center,
-.modules-left {
-  background: #1e1e2e;
-  border: 0px solid #585b70;
-  padding: 7px 0;
-}
-
-.modules-right {
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 10em 2em 2em 10em;
-}
-
-.modules-center {
-  border-radius: 10em;
-}
-
-.modules-left {
-  padding-right: 5px;
-  padding-left: 5px;
-  border-radius: 2em 10em 10em 2em;
-}
-
-#battery,
-#custom-clipboard,
-#custom-colorpicker,
-#custom-powerDraw,
-#bluetooth,
-#pulseaudio,
-#network,
-#disk,
-#memory,
-#backlight,
-#cpu,
-#temperature,
-#custom-weather,
-#idle_inhibitor,
-#jack,
-#tray,
-#window,
-#clock {
-  padding: 0px 8px;
-}
-
-.modules-left *:not(:first-child),
-.modules-right *:not(:first-child) {
-  border-left: 1px solid #585b70;
-}
-
-#temperature.critical,
-#pulseaudio.muted {
-  color: #FF0000;
-}
-
-#clock {
-  color: #5fd1fa;
-}
-
-#battery.charging {
-  color: #ffffff;
-  background-color: #26A65B;
-}
-
-#battery.warning:not(.charging) {
-  background-color: #ffbe61;
-  color: black;
-}
-
-#battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#workspaces {
-  padding: 0 3px;
-}
-
-#workspaces * {
-  padding: 0 3px;
-  margin: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	text-shadow: none;
   border-radius: 0;
 }
 
+window#waybar {
+  background: @mantle;
+}
 
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: #000000;
-  }
+.modules-left,
+.modules-center,
+.modules-right {
+  font-size: 11px;
+  color: @text;
+}
+
+.modules-left button,
+.modules-center button,
+.modules-right button {
+  padding: 2px;
+}
+
+#custom-logo {
+  color: @blue;
+}
+
+#clock {
+  color: @pink;
+}
+
+
+#custom-weather {
+  color: @lavender;
+}
+
+/* #workspaces .flat:nth-child(1) { color: @red; } */
+/* #workspaces .flat:nth-child(2) { color: @peach; } */
+/* #workspaces .flat:nth-child(3) { color: @yellow; } */
+/* #workspaces .flat:nth-child(4) { color: @green; } */
+/* #workspaces .flat:nth-child(5) { color: @sapphire; } */
+/* #workspaces .flat:nth-child(6) { color: @sky; } */
+/* #workspaces .flat:nth-child(7) { color: @blue; } */
+/* #workspaces .flat:nth-child(8) { color: @lavender; } */
+/* #workspaces .flat:nth-child(9) { color: @mauve; } */
+/* #workspaces .flat:nth-child(10) { color: @pink; } */
+
+/* #workspaces .flat.active:nth-child(1) { background: @red; } */
+/* #workspaces .flat.active:nth-child(2) { background: @peach; } */
+/* #workspaces .flat.active:nth-child(3) { background: @yellow; } */
+/* #workspaces .flat.active:nth-child(4) { background: @green; } */
+/* #workspaces .flat.active:nth-child(5) { background: @sapphire; } */
+/* #workspaces .flat.active:nth-child(6) { background: @sky; } */
+/* #workspaces .flat.active:nth-child(7) { background: @blue; } */
+/* #workspaces .flat.active:nth-child(8) { background: @lavender; } */
+/* #workspaces .flat.active:nth-child(9) { background: @mauve; } */
+/* #workspaces .flat.active:nth-child(10) { background: @pink; } */
+
+#workspaces .flat {
+  color: @lavender;
+}
+
+#workspaces .flat.active {
+  background: @lavender;
+  color: @base;
+}
+
+#disk {
+  color: @sky;
+}
+
+#memory {
+  color: @maroon;
+}
+
+#cpu {
+  color: @mauve;
+}
+
+#temperature {
+  color: @red;
+}
+
+#custom-powerDraw {
+  color: @yellow;
+}
+
+#backlight {
+  color: @rosewater;
+}
+
+#custom-colorpicker {}
+
+#bluetooth {
+  color: @sapphire;
+}
+
+#pulseaudio {
+  color: @flamingo;
+}
+
+#network {
+  color: @teal;
+}
+
+#battery {
+  color: @green;
+}
+
+#taskbar button.active {
+  background: @blue;
+  color: @base;
+}
+
+#taskbar button {
+  color: @blue;
+  font-size: 8px;
 }
