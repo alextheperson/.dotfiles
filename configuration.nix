@@ -101,6 +101,10 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "qtwebengine-5.15.19"
+  ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
