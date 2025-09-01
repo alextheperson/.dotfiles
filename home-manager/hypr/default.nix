@@ -6,7 +6,7 @@
     enable = true;
   };
 
-  home.file.hypr.source = ./hypr;
+  home.file.hypr.source = ../hypr;
   home.file.hypr.target = ".config/hypr";
   home.file.hypr.recursive = true;
 }

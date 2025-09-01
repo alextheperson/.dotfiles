@@ -40,8 +40,8 @@
 
   imports = [
     ./shell.nix
-    ./waybar.nix
-    ./hypr.nix
+    ./waybar
+    ./hypr
   ];
 
   services.blueman-applet.enable = true;
