@@ -16,8 +16,11 @@
     hyprpaper
     hyprpicker
 
+    playerctl
+
     neofetch
     btop
+    kdePackages.filelight
 
     fzf
     clang
@@ -31,6 +34,7 @@
     prusa-slicer
     thunderbird
     kicad
+    superTuxKart
     # inputs.dmm.packages.aarch64-linux.default
   ];
 
