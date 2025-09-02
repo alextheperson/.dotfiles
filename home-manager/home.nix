@@ -1,6 +1,7 @@
-{ config, pkgs, catppuccin, ... }:
+{ config, pkgs, catppuccin, nix-alien, ... }:
 
 {
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "alex";
@@ -36,7 +37,10 @@
     kicad
     superTuxKart
     # inputs.dmm.packages.aarch64-linux.default
+  ] ++ [
+    nix-alien.packages.aarch64-linux.default
   ];
+
 
   imports = [
     ./shell.nix
