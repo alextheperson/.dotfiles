@@ -7,7 +7,6 @@
     "modules-center": [ "hyprland/workspaces" ],
     "modules-right": [ "disk", "memory", "cpu", "temperature", "custom/powerDraw", "backlight", "pulseaudio", "custom/colorpicker", "bluetooth", "network", "battery" ],
     "reload_style_on_change":true,
-    "exclusive": false,
 
     "custom/logo": {
       "format": " alex<span color=\"#cad3f5\">@</span>serafina ",
@@ -184,7 +183,6 @@
     "modules-left": [ "wlr/taskbar"],
     "modules-right": [ "mpris" ],
     "reload_style_on_change":true,
-    "exclusive": false,
 
     "wlr/taskbar": {
       "format": " {icon} <b>{name}</b> \n {title:.20} ",
