@@ -162,9 +162,9 @@
             "warning": 20,
             "critical": 5
         },
-        "format": "{icon} {time:.11} {capacity}% ",
-        "format-charging": "{capacity}% 󰂄 ",
-        "format-plugged": "{capacity}%  ",
+        "format": "{time:.11} {icon} {capacity}% ",
+        "format-charging": "{time:.11} 󰂄 {capacity}% ",
+        "format-plugged": " capacity}% ",
             "format-icons": [
           "󰁻",
           "󰁼",
