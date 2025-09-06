@@ -36,6 +36,7 @@
     thunderbird
     kicad
     superTuxKart
+    krita
     # inputs.dmm.packages.aarch64-linux.default
   ] ++ [
     nix-alien.packages.aarch64-linux.default

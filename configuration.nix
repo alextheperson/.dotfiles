@@ -77,6 +77,11 @@
   services.libinput.enable = true;
   services.tlp.enable = true;
 
+  hardware.opentabletdriver = {
+    enable = true;
+    daemon.enable = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alex = {
     isNormalUser = true;
