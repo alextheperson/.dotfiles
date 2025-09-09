@@ -19,7 +19,7 @@
 
     catppuccin.url = "github:catppuccin/nix";
     nix-alien.url = "github:thiagokokada/nix-alien";
-
+    hyprland.url = "github:hyprwm/Hyprland";
   };
   outputs = inputs@{ self, nixpkgs, home-manager, apple-silicon, catppuccin, nix-alien, ... }: {
     nixosConfigurations.serafina = nixpkgs.lib.nixosSystem {
