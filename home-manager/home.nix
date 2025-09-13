@@ -37,6 +37,7 @@
     kicad
     superTuxKart
     krita
+    gimp
     # inputs.dmm.packages.aarch64-linux.default
   ] ++ [
     nix-alien.packages.aarch64-linux.default
