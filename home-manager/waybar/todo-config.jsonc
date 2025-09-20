@@ -1,0 +1,15 @@
+[
+  {
+    "layer": "top",
+    "exclusive": false,
+    "position": "left",
+    "width": 100,
+    "modules-left": ["custom/todo"],
+    "custom/todo": {
+      "exec": "~/.config/waybar/scripts/todo.sh",
+      "interval": 1,
+      "return-type": "json",
+      "format": "{}"
+    }
+  }
+]
