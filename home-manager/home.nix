@@ -1,4 +1,4 @@
-{ config, pkgs, catppuccin, nix-alien, ... }:
+{ config, pkgs, catppuccin, nix-alien, todo-rs, ... }:
 
 {
 
@@ -41,6 +41,7 @@
     # inputs.dmm.packages.aarch64-linux.default
   ] ++ [
     nix-alien.packages.aarch64-linux.default
+    todo-rs.packages.aarch64-linux.default
   ];
 
 

@@ -12,6 +12,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    todo-rs = {
+      url = "github:alextheperson/todo-rs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,7 +26,7 @@
     nix-alien.url = "github:thiagokokada/nix-alien";
     hyprland.url = "github:hyprwm/Hyprland";
   };
-  outputs = inputs@{ self, nixpkgs, home-manager, apple-silicon, catppuccin, nix-alien, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, apple-silicon, catppuccin, nix-alien, dmm, todo-rs, ... }: {
     nixosConfigurations.serafina = nixpkgs.lib.nixosSystem {
       system = "aarch64-linux";
       specialArgs = { inherit inputs; };
@@ -39,7 +44,7 @@
             ];
           };
 
-          home-manager.extraSpecialArgs = { inherit nix-alien; };
+          home-manager.extraSpecialArgs = { inherit nix-alien todo-rs; };
         }
       ];
     };
