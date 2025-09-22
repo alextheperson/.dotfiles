@@ -35,6 +35,19 @@
   # Specify path to peripheral firmware files. - WARNING: NOT LEGAL TO SHARE
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
+  # Collect garbage, and delete generations more than 14 days old
+  nix.gc = {
+    automatic = true;
+    randomizedDelaySec = "14m";
+    options = "--delete-older-than 14d";
+  };
+
+  nix.optimise =
+    {
+      automatic = true;
+      randomizedDelaySec = "14m";
+    };
+
   hardware = {
     graphics = {
       enable = true;
