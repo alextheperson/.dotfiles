@@ -16,6 +16,7 @@
       "original": {
         "owner": "nix-community",
         "repo": "nixos-apple-silicon",
+        "rev": "b99bf9bf7445416fe55da09034fc4a6cd733805c",
         "type": "github"
       }
     },

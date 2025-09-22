@@ -4,7 +4,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     apple-silicon = {
-      url = "github:nix-community/nixos-apple-silicon/";
+      url = "github:nix-community/nixos-apple-silicon/?rev=b99bf9bf7445416fe55da09034fc4a6cd733805c";
     };
 
     dmm = {
