@@ -3,8 +3,8 @@
     "layer": "top",
     "exclusive": false,
     "position": "left",
-    "width": 100,
     "modules-left": ["custom/todo"],
+    "reload_style_on_change":true,
     "custom/todo": {
       "exec": "~/.config/waybar/scripts/todo.sh",
       "interval": 1,

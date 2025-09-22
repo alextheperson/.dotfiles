@@ -150,3 +150,8 @@ window#waybar {
   color: @blue;
   font-size: 8px;
 }
+
+.todo {
+  font-size: 12px;
+  margin: 10px;
+}
