@@ -11,7 +11,7 @@
     cliphist
     wayclip
 
-    rofi-wayland
+    rofi
     libnotify
 
     hyprpaper
@@ -31,7 +31,7 @@
     kiwix
     webcord
     blender
-    floorp
+    floorp-bin
     prusa-slicer
     thunderbird
     kicad
