@@ -38,6 +38,8 @@
     superTuxKart
     krita
     gimp
+    inkscape
+    inkscape-extensions.inkstitch
     # inputs.dmm.packages.aarch64-linux.default
   ] ++ [
     nix-alien.packages.aarch64-linux.default

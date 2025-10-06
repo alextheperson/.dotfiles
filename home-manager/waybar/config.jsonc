@@ -130,8 +130,8 @@
 
     "pulseaudio": {
       "format": "{icon} {volume}% ",
-      "format-bluetooth":"󰂰 ",
-      "format-muted": " ",
+      "format-bluetooth":"󰂰 {volume}% ",
+      "format-muted": " {volume}% ",
       "format-icons": {
         "headphones": "",
         "bluetooth": "󰥰",
@@ -181,7 +181,7 @@
     "position": "bottom",
     "height": 30,
     "modules-left": [ "wlr/taskbar"],
-    "modules-right": [ "mpris" ],
+    "modules-right": ["image#album-art",  "mpris" ],
     "reload_style_on_change":true,
 
     "wlr/taskbar": {
@@ -194,8 +194,14 @@
       "markup": true,
     },
 
+    "image#album-art": {
+     "exec":"~/.config/waybar/scripts/album-art.sh",
+     "size": 30,
+     "interval": 5,  
+    },
+
     "mpris": {
-      "format": "{status_icon} {title} - {artist}  \n{album}  ",
+      "format": "  {status_icon} {title:.16} - {album:.16}  \n  {artist:.36}  ",
       "status-icons": {
         "playing": "\uf04b",
         "paused": "\uf04c",
