@@ -11,7 +11,7 @@
     cliphist
     wayclip
 
-    rofi
+    rofi-wayland
     libnotify
 
     hyprpaper
@@ -31,7 +31,7 @@
     kiwix
     webcord
     blender
-    floorp-bin
+    floorp
     prusa-slicer
     thunderbird
     kicad
@@ -40,6 +40,7 @@
     gimp
     inkscape
     inkscape-extensions.inkstitch
+    pom
     # inputs.dmm.packages.aarch64-linux.default
   ] ++ [
     nix-alien.packages.aarch64-linux.default

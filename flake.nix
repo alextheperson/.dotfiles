@@ -1,7 +1,7 @@
 # /etc/nixos/flake.nix
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/?rev=20075955deac2583bb12f07151c2df830ef346b4";
 
     apple-silicon = {
       url = "github:nix-community/nixos-apple-silicon/?rev=b99bf9bf7445416fe55da09034fc4a6cd733805c";
