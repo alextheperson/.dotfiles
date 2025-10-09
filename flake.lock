@@ -69,6 +69,7 @@
       "original": {
         "owner": "catppuccin",
         "repo": "nix",
+        "rev": "d75e3fe67f49728cb5035bc791f4b9065ff3a2c9",
         "type": "github"
       }
     },
@@ -119,8 +120,9 @@
         "url": "https://git.fawkes.io/api/v1/repos/mtnash/dmm/archive/e17059b308699b7fe60764b5c22e0872af04939b.tar.gz"
       },
       "original": {
+        "rev": "e17059b308699b7fe60764b5c22e0872af04939b",
         "type": "tarball",
-        "url": "https://git.fawkes.io/mtnash/dmm/archive/stable.tar.gz"
+        "url": "https://git.fawkes.io/mtnash/dmm/archive/stable.tar.gz/"
       }
     },
     "flake-compat": {
@@ -244,6 +246,7 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "rev": "9eab59f3e71ea3a725e4817d8dcf0da0824ad19d",
         "type": "github"
       }
     },
@@ -331,6 +334,7 @@
       "original": {
         "owner": "hyprwm",
         "repo": "Hyprland",
+        "rev": "88326075743a677e76645ff163b392490419d4de",
         "type": "github"
       }
     },
@@ -523,6 +527,7 @@
       "original": {
         "owner": "thiagokokada",
         "repo": "nix-alien",
+        "rev": "e62b3ad75e8c9a5e505fc78b9b40eed1178634cb",
         "type": "github"
       }
     },
@@ -747,6 +752,7 @@
       "original": {
         "owner": "alextheperson",
         "repo": "todo-rs",
+        "rev": "cbb1ab4469397b7281dcbadf16c54290f43ee1b2",
         "type": "github"
       }
     },
