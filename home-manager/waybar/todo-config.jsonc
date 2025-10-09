@@ -7,6 +7,7 @@
     "reload_style_on_change":true,
     "custom/todo": {
       "exec": "~/.config/waybar/scripts/todo.sh",
+      // "exec": "/etc/nixos/home-manager/waybar/scripts/todo.sh",
       "interval": 1,
       "return-type": "json",
       "format": "{}"
