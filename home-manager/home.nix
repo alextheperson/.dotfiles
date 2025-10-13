@@ -1,4 +1,4 @@
-{ config, pkgs, catppuccin, nix-alien, todo-rs, ... }:
+{ config, pkgs, new-nixpkgs, inputs, ... }:
 
 {
 
@@ -7,31 +7,38 @@
   home.username = "alex";
   home.homeDirectory = "/home/alex";
 
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
+    # Basic system
     cliphist
     wayclip
-
     rofi-wayland
     libnotify
-
     hyprpaper
     hyprpicker
+    hyprshot
 
+    # Utils
     playerctl
-
-    neofetch
-    btop
-    kdePackages.filelight
-
     fzf
     clang
     jq
     unzip
+    zip
 
+    # TUI Utils
+    btop
+    neofetch
+    streamrip
+    pulsemixer
+    pom
+
+    # GUI Utils
     kiwix
+    kdePackages.filelight
+
+    # GUI Apps
     webcord
     blender
-    floorp
     prusa-slicer
     thunderbird
     kicad
@@ -40,12 +47,14 @@
     gimp
     inkscape
     inkscape-extensions.inkstitch
-    pom
-    # inputs.dmm.packages.aarch64-linux.default
-  ] ++ [
+    scribus
+  ]) ++ (with new-nixpkgs.legacyPackages.aarch64-linux; [
+    floorp-bin
+  ]) ++ (with inputs; [
     nix-alien.packages.aarch64-linux.default
     todo-rs.packages.aarch64-linux.default
-  ];
+    dmm.packages.aarch64-linux.default
+  ]);
 
 
   imports = [
