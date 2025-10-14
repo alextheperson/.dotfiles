@@ -10,7 +10,21 @@ spawn-at-startup "kitty"
 spawn-at-startup "floorp"
 
 prefer-no-csd
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Documents/pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+
+cursor {
+    xcursor-theme "nordzy_cursors"
+    xcursor-size 48
+
+    hide-when-typing
+    hide-after-inactive-ms 1000
+}
 
 // Input device configuration.
 // Find the full list of options on the wiki:

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, nixpkgs-stable, nixpkgs-unstable, inputs, ... }:
 
 {
   programs.waybar.enable = true;
