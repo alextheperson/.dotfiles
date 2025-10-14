@@ -14,7 +14,7 @@
     };
 
     todo-rs = {
-      url = "github:alextheperson/todo-rs/?rev=cbb1ab4469397b7281dcbadf16c54290f43ee1b2";
+      url = "github:alextheperson/todo-rs/";
     };
 
     home-manager = {
