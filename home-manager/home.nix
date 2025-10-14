@@ -8,17 +8,13 @@
   home.homeDirectory = "/home/alex";
 
   home.packages = (with pkgs; [
-    # Basic system
+    # Utils
     cliphist
     wayclip
     rofi-wayland
     libnotify
-    hyprpaper
-    hyprpicker
-    hyprshot
-
-    # Utils
     playerctl
+    brightnessctl
     fzf
     clang
     jq
@@ -60,16 +56,19 @@
   imports = [
     ./shell.nix
     ./waybar
-    ./hypr
+    ./wallpaper
+    ./niri
   ];
 
   services.blueman-applet.enable = true;
   services.mako = {
     enable = true;
-    anchor = "bottom-right";
-    borderSize = 2;
-    borderRadius = 18;
-    defaultTimeout = 30000;
+    settings = {
+      anchor = "bottom-right";
+      border-size = 2;
+      border-radius = 18;
+      default-timeout = 15000;
+    };
   };
 
   programs.git = {

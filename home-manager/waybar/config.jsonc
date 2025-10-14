@@ -3,9 +3,9 @@
     "layer": "top",
     "position": "top",
     "height": 23,
-    "modules-left": [ "custom/logo", "clock", "custom/weather"],
-    "modules-center": [ "hyprland/workspaces" ],
-    "modules-right": [ "disk", "memory", "cpu", "temperature", "custom/powerDraw", "backlight", "pulseaudio", "custom/colorpicker", "bluetooth", "network", "battery" ],
+    "modules-left": [ "custom/logo", "cpu", "memory", "temperature", "disk", "custom/powerDraw"],
+    "modules-center": [ "clock" , "custom/weather"],
+    "modules-right": [ "backlight", "pulseaudio", "custom/colorpicker", "bluetooth", "network", "battery" ],
     "reload_style_on_change":true,
 
     "custom/logo": {
@@ -31,27 +31,6 @@
       "exec": "~/.config/waybar/scripts/weather.sh",
       "interval": 10,
       "tooltip": true
-    },
-
-    "hyprland/workspaces": {
-      "format": "{icon}",
-      "format-icons": {
-        "1": "1",
-        "2": "2",
-        "3": "3",
-        "4": "4",
-        "5": "5",
-        "6": "6",
-        "7": "7",
-        "8": "8",
-        "9": "9",
-        "10": "0",
-        //"active": "",
-        //"default": "" 
-      },
-      "persistent-workspaces": {
-        "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-      }
     },
 
     "disk": {
@@ -94,16 +73,17 @@
       "device": "intel_backlight",
       "format": "{icon} {percent}% ",
       "format-icons": [
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        "\ue39b"
       ],
     },
 
@@ -166,12 +146,17 @@
         "format-charging": "{time:.11} 󰂄 {capacity}% ",
         "format-plugged": " capacity}% ",
             "format-icons": [
-          "󰁻",
-          "󰁼",
-          "󰁾",
-          "󰂀",
-          "󰂂",
-          "󰁹"
+        "\u000f\u008e",
+        "\u000f\u007a",
+        "\u000f\u007b",
+        "\udb80\udc7c",
+        "\udb80\udc7d",
+        "\udb80\udc7e",
+        "\udb80\udc7f",
+        "\udb80\udc80",
+        "\udb80\udc81",
+        "\udb80\udc82",
+        "\udb80\udc79",
         ],
     },
   },
@@ -185,10 +170,13 @@
     "reload_style_on_change":true,
 
     "wlr/taskbar": {
-      "format": " {icon} <b>{name}</b> \n {title:.20} ",
+      "format": " {icon} <b>{name}  {short_state}</b> \n {title:.20} ",
       "icon-size": 25,
       "tooltip-format": "{title}",
-      "sort-by-app-id": true,
+      "active-first": true,
+      "ignore-list": [
+        "kitty"
+      ],
       "on-click": "activate",
       "on-click-middle": "close",
       "markup": true,
