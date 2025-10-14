@@ -26,6 +26,8 @@
       jq
       unzip
       zip
+      libsecret
+      git-credential-manager
 
       # TUI Utils
       btop
@@ -35,6 +37,7 @@
       pom
 
       # GUI Apps
+      seahorse
       kiwix
       kdePackages.filelight
       webcord
@@ -82,7 +85,8 @@
       userName = "Alex Solis";
       extraConfig = {
         credential = {
-          helper = "store";
+          credentialStore = "secretservice";
+          helper = "${nixpkgs-stable.git-credential-manager}/bin/git-credential-manager";
         };
         pull = {
           rebase = true;

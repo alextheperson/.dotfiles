@@ -127,6 +127,10 @@
     # You can use https://search.nixos.org/ to find more packages (and options).
     environment.systemPackages = with nixpkgs-stable;
       [
+        # Portals for niri
+        gnome-keyring
+        xdg-desktop-portal-gtk
+        xdg-desktop-portal-gnome
       ];
 
     fonts.packages = with nixpkgs-stable; [
@@ -194,7 +198,7 @@
     # to actually do that.
     #
     # This value being lower than the current NixOS release does NOT mean your system is
-    # out of date, out of support, or vulnerable.
+    # out-of-date, out of support, or vulnerable.
     #
     # Do NOT change this value unless you have manually inspected all the changes it would make to your configuration,
     # and migrated your data accordingly.
