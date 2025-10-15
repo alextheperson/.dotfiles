@@ -79,6 +79,8 @@
       };
     };
 
+    services.kdeconnect.enable = true;
+
     programs.git = {
       enable = true;
       userEmail = "git@alexsol.is";

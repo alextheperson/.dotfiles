@@ -167,18 +167,10 @@
     # services.openssh.enable = true;
 
     # Open ports in the firewall.
-    networking.firewall.allowedTCPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
-    networking.firewall.allowedUDPPortRanges = [
-      {
-        from = 1714;
-        to = 1764;
-      }
-    ];
+    networking.firewall = rec {
+      allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+      allowedUDPPortRanges = allowedTCPPortRanges;
+    };
 
     # networking.firewall.allowedUDPPorts = [];
     # networking.firewall.allowedUDPPorts = [];
