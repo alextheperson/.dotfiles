@@ -108,7 +108,7 @@
 
     programs.niri = {
       enable = true;
-      package = nixpkgs-stable.niri;
+      package = nixpkgs-unstable.niri;
     };
 
     services.displayManager.ly = {

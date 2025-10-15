@@ -25,33 +25,37 @@
     nix-alien.url = "github:thiagokokada/nix-alien/?rev=e62b3ad75e8c9a5e505fc78b9b40eed1178634cb";
     hyprland.url = "github:hyprwm/Hyprland/?rev=88326075743a677e76645ff163b392490419d4de";
 
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
-    };
+    # niri = {
+    #   url = "github:sodiboo/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    #   inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    # };
   };
   outputs = inputs@{ self, nixpkgs-stable, home-manager, nixpkgs-unstable, ... }: {
-    nixosConfigurations.serafina = nixpkgs-stable.lib.nixosSystem {
-      system = "aarch64-linux";
-      specialArgs = { inherit inputs; };
-      modules = [
-        ./configuration.nix
+    nixosConfigurations.serafina = nixpkgs-stable.lib.nixosSystem
+      {
+        system = "aarch64-linux";
+        specialArgs = { inherit inputs; };
+        # nixpkgs-stable.overlays = [
+        #   inputs.niri.overlays.niri
+        # ];
+        modules = [
+          ./configuration.nix
 
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.alex = {
-            imports = [
-              ./home-manager/home.nix
-              inputs.catppuccin.homeModules.catppuccin
-            ];
-          };
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.alex = {
+              imports = [
+                ./home-manager/home.nix
+                inputs.catppuccin.homeModules.catppuccin
+              ];
+            };
 
-          home-manager.extraSpecialArgs = { inherit inputs; };
-        }
-      ];
-    };
+            home-manager.extraSpecialArgs = { inherit inputs; };
+          }
+        ];
+      };
   };
 }

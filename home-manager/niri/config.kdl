@@ -141,10 +141,14 @@ layout {
 
     // You can change how the focus ring looks.
     focus-ring {
-      off
+      // off
+        width 2
+        active-color "#8aadf4"
+        urgent-color "#ed8796"
     }
 
     border {
+      off
         width 2
         active-color "#f5a97f"
         inactive-color "#b7bdf8"
@@ -157,7 +161,14 @@ layout {
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     // You can think of them as a kind of outer gaps. They are set in logical pixels.
     struts {
+      left 50
+      right 50
     }
+}
+
+window-rule {
+    geometry-corner-radius 2
+    clip-to-geometry true
 }
 
 // You can also set this to null to disable saving screenshots to disk.
@@ -238,10 +249,10 @@ binds {
 
     Mod+C hotkey-overlay-title="Close Window" { close-window; }
 
-    Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
-    Mod+L     { focus-column-right; }
+    Mod+H     { focus-column-left-or-last; }
+    Mod+J     { focus-window-or-workspace-down; }
+    Mod+K     { focus-window-or-workspace-up; }
+    Mod+L     { focus-column-right-or-first; }
 
     Mod+Shift+H     { move-column-left; }
     Mod+Shift+J     { move-window-down; }
@@ -270,11 +281,11 @@ binds {
 
     Mod+U              { focus-workspace-down; }
     Mod+I              { focus-workspace-up; }
-    Mod+Ctrl+U         { move-column-to-workspace-down; }
-    Mod+Ctrl+I         { move-column-to-workspace-up; }
+    Mod+Shift+U         { move-column-to-workspace-down; }
+    Mod+Shift+I         { move-column-to-workspace-up; }
 
-    Mod+Shift+U         { move-workspace-down; }
-    Mod+Shift+I         { move-workspace-up; }
+    Mod+Ctrl+Shift+U         { move-workspace-down; }
+    Mod+Ctrl+Shift+I         { move-workspace-up; }
 
     // You can bind mouse wheel scroll ticks using the following syntax.
     // These binds will change direction based on the natural-scroll setting.
@@ -287,8 +298,8 @@ binds {
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
     Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
 
-    Mod+WheelScrollRight      { focus-column-right; }
-    Mod+WheelScrollLeft       { focus-column-left; }
+    Mod+WheelScrollRight      { focus-column-right-or-first; }
+    Mod+WheelScrollLeft       { focus-column-left-or-last; }
     Mod+Ctrl+WheelScrollRight { move-column-right; }
     Mod+Ctrl+WheelScrollLeft  { move-column-left; }
 
@@ -367,7 +378,7 @@ binds {
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
     // rather than stacked on top of each other.
-    Mod+S { toggle-column-tabbed-display; }
+    // Mod+S { toggle-column-tabbed-display; }
 
     Mod+T { spawn-sh "kill -n 10 $(ps -e | grep waybar | sed '$b;d' | xargs | cut -d ' ' -f 1)"; }
 
@@ -392,6 +403,8 @@ binds {
     // The allow-inhibiting=false property can be applied to other binds as well,
     // which ensures niri always processes them, even when an inhibitor is active.
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    Mod+V {center-column;}
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+C { quit; }
