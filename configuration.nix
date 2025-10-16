@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ lib, config, inputs, ... }: (
+{ lib, config, pkgs, inputs, ... }: (
 
   let
     nixpkgs-stable = inputs.nixpkgs-stable.legacyPackages.aarch64-linux;
@@ -108,7 +108,6 @@
 
     programs.niri = {
       enable = true;
-      package = nixpkgs-unstable.niri;
     };
 
     services.displayManager.ly = {

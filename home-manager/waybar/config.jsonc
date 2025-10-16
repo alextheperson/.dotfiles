@@ -146,9 +146,9 @@
         "format-charging": "{time:.11} 󰂄 {capacity}% ",
         "format-plugged": " capacity}% ",
             "format-icons": [
-        "\u000f\u008e",
-        "\u000f\u007a",
-        "\u000f\u007b",
+        "\udb80\u008e",
+        "\udb80\u007a",
+        "\udb80\u007b",
         "\udb80\udc7c",
         "\udb80\udc7d",
         "\udb80\udc7e",

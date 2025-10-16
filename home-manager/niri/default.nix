@@ -1,15 +1,14 @@
-{ config, inputs, ... }:
-(
+{ config, pkgs, inputs, ... }:
+{
+  # programs.niri = {
+  #   # enable = true;
+  #   # package = pkgs.niri-unstable;
+  #   settings = {
+  #     outputs."eDP-1".scale = 2.0;
+  #   };
+  # };
 
-  let
-    nixpkgs-stable = inputs.nixpkgs-stable.legacyPackages.aarch64-linux;
-    nixpkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.aarch64-linux;
-  in
-
-
-  {
-    home.file.niri.source = ../niri;
-    home.file.niri.target = ".config/niri";
-    home.file.niri.recursive = true;
-  }
-)
+  home.file.niri.source = ../niri;
+  home.file.niri.target = ".config/niri";
+  home.file.niri.recursive = true;
+}

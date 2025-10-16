@@ -2,7 +2,6 @@
 {
   inputs = {
     nixpkgs-stable.url = "github:NixOS/nixpkgs/?rev=20075955deac2583bb12f07151c2df830ef346b4";
-
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     apple-silicon = {
@@ -36,10 +35,22 @@
       {
         system = "aarch64-linux";
         specialArgs = { inherit inputs; };
-        # nixpkgs-stable.overlays = [
-        #   inputs.niri.overlays.niri
-        # ];
+
         modules = [
+          {
+            nixpkgs.overlays = [
+              (final: prev: {
+                unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+                # use this variant if unfree packages are needed:
+                # unstable = import nixpkgs-unstable {
+                #   inherit prev;
+                #   system = prev.system;
+                #   config.allowUnfree = true;
+                # };
+              })
+              # inputs.niri.overlays.niri
+            ];
+          }
           ./configuration.nix
 
           home-manager.nixosModules.home-manager
