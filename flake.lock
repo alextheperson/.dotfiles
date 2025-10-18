@@ -800,11 +800,11 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1760403454,
-        "narHash": "sha256-6F/1WMAaQ2yr0qr68SjyDmdew6iuZQjneEmgiZ4R3ds=",
+        "lastModified": 1760659548,
+        "narHash": "sha256-2ksoXk1tpEmNzldmZEmqMoS4bBebYfpgG5b26/Jdxjs=",
         "owner": "alextheperson",
         "repo": "todo-rs",
-        "rev": "a10e3bc80b6d9c9054e0866d91a12ea400e1f1a1",
+        "rev": "7c0957b3248cf732330b5234be28d06dcb2e931f",
         "type": "github"
       },
       "original": {

@@ -108,6 +108,7 @@
 
     programs.niri = {
       enable = true;
+      package = pkgs.unstable.niri;
     };
 
     services.displayManager.ly = {

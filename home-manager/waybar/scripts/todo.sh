@@ -28,8 +28,7 @@ mantle="#1E2030"
 crust="#181926"
 
 todoText="$(
-  cd ~
-  todo list -d --format pango |
+  todo list ~ -d --format pango |
     # Convert the color names to catppuccin colors
     sed "s/\"black\"/\"$crust\"/g" |
     sed "s/\"red\"/\"$red\"/g" |
