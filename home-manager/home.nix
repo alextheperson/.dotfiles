@@ -26,7 +26,7 @@
     btop
     neofetch
     streamrip
-    pulsemixer
+    ncpamixer
     pom
 
     # GUI Apps
