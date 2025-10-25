@@ -68,7 +68,7 @@
     settings = {
       anchor = "bottom-right";
       border-size = 2;
-      border-radius = 18;
+      border-radius = 2;
       default-timeout = 15000;
     };
   };
@@ -104,13 +104,13 @@
     defaultEditor = true;
   };
 
-  home.pointerCursor = {
-    package = pkgs.catppuccin-cursors.latteDark;
-    name = "catppuccin-latte-dark-cursors";
-    size = 32;
-    gtk.enable = true;
-    x11.enable = true;
-  };
+  # home.pointerCursor = {
+  #   package = pkgs.catppuccin-cursors.latteDark;
+  #   name = "catppuccin-latte-dark-cursors";
+  #   size = 16;
+  #   gtk.enable = true;
+  #   x11.enable = true;
+  # };
 
   gtk = {
     enable = true;
