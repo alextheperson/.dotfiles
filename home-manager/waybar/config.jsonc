@@ -35,8 +35,8 @@
 
     "disk": {
       "interval": 30,
-      "format": "\uf0a0 {percentage_free}% ",
-      "tooltip-format": "{free} / {total}\n{used} ({percentage_used}%) used",
+      "format": "\uf0a0 {percentage_used}% ",
+      "tooltip-format": "{used} / {total}\n{free} ({percentage_free}%) free",
       "path": "/",
     },
 
