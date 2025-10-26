@@ -1,0 +1,71 @@
+# See Swaylock (1) manpage
+# or https://github.com/swaywm/swaylock/blob/master/swaylock.1.scd
+
+image=~/.config/wallpapers/0001.png
+
+ignore-empty-password
+
+font=fira-code
+font-size=46
+
+indicator-idle-visible
+indicator-radius=150
+indicator-thickness=40
+
+inside-color=24273a
+inside-clear-color=24273a
+inside-caps-lock-color=24273a
+inside-ver-color=24273a
+inside-wrong-color=24273a
+
+show-keyboard-layout
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color=cad3f5
+
+line-color=363a4f
+line-clear-color=363a4f
+line-caps-lock-color=363a4f
+line-ver-color=363a4f
+line-wrong-color=363a4f
+
+key-hl-color=8aadf4
+separator-color=00000000
+ring-color=24273a
+ring-clear-color=a6da95
+ring-caps-lock-color=eed49f
+ring-ver-color=8aadf4
+ring-wrong-color=ed8796
+
+text-color=cad3f5
+text-clear-color=cad3f5
+text-caps-lock-color=cad3f5
+text-ver-color=cad3f5
+text-wrong-color=cad3f5
+
+# Rosewater #f4dbd6
+# Flamingo #f0c6c6
+# Pink #f5bde6
+# Mauve #c6a0f6
+# Red #ed8796
+# Maroon #ee99a0
+# Peach #f5a97f
+# Yellow #eed49f
+# Green #a6da95
+# Teal #8bd5ca
+# Sky #91d7e3
+# Sapphire #7dc4e4
+# Blue #8aadf4
+# Lavender #b7bdf8
+# Text #cad3f5
+# Subtext1 #b8c0e0
+# Subtext0 #a5adcb
+# Overlay2 #939ab7
+# Overlay1 #8087a2
+# Overlay0 #6e738d
+# Surface2 #5b6078
+# Surface1 #494d64
+# Surface0 #363a4f
+# Base #24273a
+# Mantle #1e2030
+# Crust #181926

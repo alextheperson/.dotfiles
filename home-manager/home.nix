@@ -60,6 +60,7 @@
     ./wallpaper
     # inputs.niri.homeModules.niri
     ./niri
+    ./swaylock
   ];
 
   services.blueman-applet.enable = true;
