@@ -8,7 +8,6 @@
   #   };
   # };
 
-  home.file.niri.source = ../niri;
-  home.file.niri.target = ".config/niri";
-  home.file.niri.recursive = true;
+  home.file.niri.source = ./config.kdl;
+  home.file.niri.target = ".config/niri/config.kdl";
 }
