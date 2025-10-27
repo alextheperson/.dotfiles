@@ -52,7 +52,6 @@
   ]) ++ (with inputs; [
     nix-alien.packages.aarch64-linux.default
     todo-rs.packages.aarch64-linux.default
-    dmm.packages.aarch64-linux.default
   ]);
 
 
@@ -63,6 +62,7 @@
     inputs.niri.homeModules.niri
     ./niri
     ./swaylock
+    ./dmm.nix
   ];
 
   services.blueman-applet.enable = true;

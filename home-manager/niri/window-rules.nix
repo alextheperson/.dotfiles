@@ -22,8 +22,7 @@
       # - host Firefox (app-id is "firefox")
       # - Flatpak Firefox (app-id is "org.mozilla.firefox")
       matches = [{ app-id = "floorp"; title = "^Picture-in-Picture$"; }];
-      open-floating =
-        true;
+      open-floating = true;
     }
   ];
 
