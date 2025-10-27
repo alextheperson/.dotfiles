@@ -18,7 +18,7 @@ inside-caps-lock-color=24273a
 inside-ver-color=24273a
 inside-wrong-color=24273a
 
-show-keyboard-layout
+# show-keyboard-layout
 layout-bg-color=00000000
 layout-border-color=00000000
 layout-text-color=cad3f5

@@ -24,11 +24,11 @@
     nix-alien.url = "github:thiagokokada/nix-alien/?rev=e62b3ad75e8c9a5e505fc78b9b40eed1178634cb";
     hyprland.url = "github:hyprwm/Hyprland/?rev=88326075743a677e76645ff163b392490419d4de";
 
-    # niri = {
-    #   url = "github:sodiboo/niri-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
-    #   inputs.nixpkgs-stable.follows = "nixpkgs-stable";
-    # };
+    niri = {
+      url = "github:sodiboo/niri-flake/?rev=e3d9f9b891a265b58c8bea73e79d77596da701fe";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    };
   };
   outputs = inputs@{ self, nixpkgs-stable, home-manager, nixpkgs-unstable, ... }: {
     nixosConfigurations.serafina = nixpkgs-stable.lib.nixosSystem

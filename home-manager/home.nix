@@ -21,6 +21,7 @@
     zip
     libsecret
     git-credential-manager
+    dconf
 
     # TUI Utils
     btop
@@ -39,6 +40,7 @@
     thunderbird
     kicad
     superTuxKart
+    xonotic
     krita
     gimp
     inkscape
@@ -58,7 +60,7 @@
     ./shell.nix
     ./waybar
     ./wallpaper
-    # inputs.niri.homeModules.niri
+    inputs.niri.homeModules.niri
     ./niri
     ./swaylock
   ];

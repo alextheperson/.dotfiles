@@ -106,10 +106,10 @@
       extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     };
 
-    programs.niri = {
-      enable = true;
-      package = pkgs.unstable.niri;
-    };
+    # For some reason, this isn't happening automatically. This is needed for niri
+    environment.systemPackages = [ pkgs.niri ];
+    services.displayManager.sessionPackages = [ pkgs.niri ];
+    systemd.packages = [ pkgs.niri ];
 
     services.displayManager.ly = {
       enable = true;
@@ -122,16 +122,6 @@
         bigclock_seconds = true;
       };
     };
-
-    # List packages installed in system profile.
-    # You can use https://search.nixos.org/ to find more packages (and options).
-    environment.systemPackages = with nixpkgs-stable;
-      [
-        # Portals for niri
-        gnome-keyring
-        xdg-desktop-portal-gtk
-        xdg-desktop-portal-gnome
-      ];
 
     fonts.packages = with nixpkgs-stable; [
       fira-code
