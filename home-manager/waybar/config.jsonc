@@ -73,16 +73,16 @@
       "device": "intel_backlight",
       "format": "{icon} {percent}% ",
       "format-icons": [
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
-        " ",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
         "\ue39b"
       ],
     },
@@ -190,7 +190,7 @@
     },
 
     "mpris": {
-      "format": "  {status_icon} {title:.16} - {album:.16}  \n  {artist:.36}  ",
+      "format": "  {status_icon} {title} - {album}  \n  {artist}  ",
       "status-icons": {
         "playing": "\uf04b",
         "paused": "\uf04c",
