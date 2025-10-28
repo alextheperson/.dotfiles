@@ -20,15 +20,15 @@
       };
 
       "Mod+grave" = {
-        action.spawn = [ "kitten" "quick-access-terminal" ];
+        action.spawn-sh = "kitten quick-access-terminal";
         hotkey-overlay.title = "Open QAT";
       };
       "Mod+R" = {
-        action.spawn = [ "rofi" "-show" "drun" ];
+        action.spawn-sh = "rofi -show drun";
         hotkey-overlay.title = "Application Launcher";
       };
       "Mod+Space" = {
-        action.spawn = [ "rofi" "-show" "drun" ];
+        action.spawn-sh = "rofi -show drun";
         hotkey-overlay.title = "Application Launcher";
       };
       "Super+Alt+L" = {
@@ -39,49 +39,49 @@
       # Example volume keys mappings for PipeWire & WirePlumber.
       # The allow-when-locked=true property makes them work even when the session is locked.
       "XF86AudioRaiseVolume" = {
-        action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+" ];
+        action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+";
         allow-when-locked = true;
       };
       "XF86AudioLowerVolume" = {
-        action.spawn = [ "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-" ];
+        action.spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-";
         allow-when-locked = true;
       };
       "XF86AudioMute" = {
-        action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle" ];
+        action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
         allow-when-locked = true;
       };
       "XF86AudioMicMute" = {
-        action.spawn = [ "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle" ];
+        action.spawn-sh = "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
         allow-when-locked = true;
       };
 
       "XF86MonBrightnessUp" = {
-        action.spawn = [ "brightnessctl" "-e4" "-n0" "set" "5%+" ];
+        action.spawn-sh = "brightnessctl -e4 -n0 set 5%+";
         allow-when-locked = true;
       };
 
       "XF86MonBrightnessDown" = {
-        action.spawn = [ "brightnessctl" "-e4" "-n0" "set" "5%-" ];
+        action.spawn-sh = "brightnessctl -e4 -n0 set 5%-";
         allow-when-locked = true;
       };
 
 
       "XF86AudioNext" = {
-        action.spawn = [ "playerctl" "next" ];
+        action.spawn-sh = "playerctl next";
         allow-when-locked = true;
       };
 
 
       "XF86AudioPause" = {
-        action.spawn = [ "playerctl" "play-pause" ];
+        action.spawn-sh = "playerctl play-pause";
         allow-when-locked = true;
       };
       "XF86AudioPlay" = {
-        action.spawn = [ "playerctl" "play-pause" ];
+        action.spawn-sh = "playerctl play-pause";
         allow-when-locked = true;
       };
       "XF86AudioPrev" = {
-        action.spawn = [ "playerctl" "previous" ];
+        action.spawn-sh = "playerctl previous";
         allow-when-locked = true;
       };
 
@@ -89,7 +89,7 @@
         action.toggle-overview = [ ];
       };
       "XF86Search" = {
-        action.spawn = [ "rofi" "-show" "drun" ];
+        action.spawn-sh = "rofi -show drun";
       };
       "XF86Sleep" = {
         action .spawn = [ "swaylock" ];
@@ -446,11 +446,7 @@
       };
 
       "Mod+T" = {
-        action.spawn = [
-          "sh"
-          "-c"
-          "kill -n 10 $(ps -e | grep waybar | sed '$b;d' | xargs | cut -d ' ' -f 1)"
-        ];
+        action.spawn-sh = "kill -n 10 $(ps -e | grep waybar | sed '$b;d' | xargs | cut -d ' ' -f 1)";
         hotkey-overlay = {
           title = "Toggle Todo List";
         };

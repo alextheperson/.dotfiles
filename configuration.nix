@@ -107,9 +107,9 @@
     };
 
     # For some reason, this isn't happening automatically. This is needed for niri
-    environment.systemPackages = [ pkgs.niri ];
-    services.displayManager.sessionPackages = [ pkgs.niri ];
-    systemd.packages = [ pkgs.niri ];
+    environment.systemPackages = [ pkgs.unstable.niri ];
+    services.displayManager.sessionPackages = [ pkgs.unstable.niri ];
+    systemd.packages = [ pkgs.unstable.niri ];
 
     services.displayManager.ly = {
       enable = true;

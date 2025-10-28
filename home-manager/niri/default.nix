@@ -7,7 +7,7 @@
   ];
 
   programs.niri = {
-    # package = pkgs.niri-unstable;
+    package = pkgs.unstable.niri;
 
     enable = true;
     # package = pkgs.niri-unstable;
@@ -17,12 +17,16 @@
           render-drm-device = "/dev/dri/renderD128";
         };
 
+        hotkey-overlay = {
+          skip-at-startup = true;
+          hide-not-bound = true;
+        };
+
         spawn-at-startup = [
+          { sh = "wbg ~/.config/wallpapers/0001.png"; }
           { argv = [ "waybar" ]; }
-          { argv = [ "kitty" ]; }
+          { sh = "waybar -c ~/.config/waybar/todo-config.jsonc"; }
           { argv = [ "floorp" ]; }
-          { argv = [ "waybar" "-c" "/home/alex/.config/waybar/todo-config.jsonc" ]; }
-          { argv = [ "wbg" "/home/alex/.config/wallpapers/0001.png" ]; }
         ];
 
         prefer-no-csd = true;
@@ -89,24 +93,4 @@
       };
   };
 
-  # I somehow broke the systemd unit for niri, so I have
-  # to re-create it in order for it to (sort-of) load.
-  # systemd.user.services.niri = {
-  #   Unit = {
-  #     Description = "A scrollable-tiling Wayland compositor";
-  #     BindsTo = "graphical-session.target";
-  #     Before = "graphical-session.target";
-  #     Wants = "graphical-session-pre.target";
-  #     After = "graphical-session-pre.target";
-  #
-  #     # Wants = "xdg-desktop-autostart.target";
-  #     # Before = "xdg-desktop-autostart.target";
-  #   };
-  #
-  #   Service = {
-  #     Slice = "session.slice";
-  #     Type = "notify";
-  #     ExecStart = "${pkgs.niri}/bin/niri --session";
-  #   };
-  # };
 }
