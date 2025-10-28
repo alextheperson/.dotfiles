@@ -124,3 +124,7 @@ window#waybar {
   font-size: 12px;
   margin: 10px;
 }
+
+.workspace {
+  font-size: 8px;
+}

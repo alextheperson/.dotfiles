@@ -166,6 +166,7 @@
     "position": "bottom",
     "height": 30,
     "modules-left": [ "wlr/taskbar"],
+    "modules-center": ["custom/workspaces"],
     "modules-right": ["image#album-art",  "mpris" ],
     "reload_style_on_change":true,
 
@@ -195,6 +196,13 @@
         "paused": "\uf04c",
         "stopped": "\uf04d"
       }
+    },
+
+    "custom/workspaces": {
+      "exec": "~/.config/waybar/scripts/workspaces.sh",
+      "restart-interval": 60,
+      "return-type": "json",
+      "format": "{}"
     }
   }
 ]
