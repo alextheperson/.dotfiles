@@ -63,6 +63,7 @@
     ./niri
     ./swaylock
     ./dmm.nix
+    ./rink
   ];
 
   services.blueman-applet.enable = true;
