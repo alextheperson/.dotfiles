@@ -5,6 +5,7 @@
 
       # Most keybinds can use Shift to move the current window/workspace instead of changing focus.
       # Ctrl and Alt are left to add other variation (like types of screenshots)
+      # Ctrl will frequently refer to monitors
 
       # Mod-Shift-/, which is usually the same as Mod-?,
       # shows a list of important hotkeys.
@@ -89,10 +90,10 @@
         action.toggle-overview = [ ];
       };
       "XF86Search" = {
-        action.spawn-sh = "rofi -show drun";
+        action.spawn-sh = "pkill rofi || rofi -show drun";
       };
       "XF86Sleep" = {
-        action .spawn = [ "swaylock" ];
+        action.spawn = [ "swaylock" ];
       };
 
       # Open/close the Overview: a zoomed-out view of workspaces and windows.
@@ -126,6 +127,10 @@
         action.focus-window-or-workspace-up = [ ];
       };
       "Mod+L" = {
+        action. focus-column-right-or-first = [ ];
+      };
+
+      "Mod+Tab" = {
         action. focus-column-right-or-first = [ ];
       };
 
@@ -468,6 +473,20 @@
         action.screenshot-window = [ ];
         hotkey-overlay = {
           title = "Take Window Screenshot";
+        };
+      };
+
+      "Mod+S" = {
+        action.spawn-sh = "pkill rink || kitty --title 'plzfloat rink' rink";
+        hotkey-overlay = {
+          title = "Toggle Rink";
+        };
+      };
+
+      "Mod+M" = {
+        action.spawn-sh = "pkill btop || kitty --title 'plzfloat btop' btop";
+        hotkey-overlay = {
+          title = "Toggle Rink";
         };
       };
 

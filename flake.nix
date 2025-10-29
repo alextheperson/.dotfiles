@@ -2,6 +2,7 @@
 {
   inputs = {
     nixpkgs-stable.url = "github:NixOS/nixpkgs/?rev=20075955deac2583bb12f07151c2df830ef346b4";
+    # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     apple-silicon = {
