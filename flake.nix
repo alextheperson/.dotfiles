@@ -1,29 +1,39 @@
 # /etc/nixos/flake.nix
 {
   inputs = {
+    # I can't wait till 25.11 is stable!!
     nixpkgs-stable.url = "github:NixOS/nixpkgs/?rev=20075955deac2583bb12f07151c2df830ef346b4";
-    # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     apple-silicon = {
       url = "github:nix-community/nixos-apple-silicon/?rev=b99bf9bf7445416fe55da09034fc4a6cd733805c";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     dmm = {
       url = "tarball+https://git.fawkes.io/mtnash/dmm/archive/stable.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     todo-rs = {
       url = "github:alextheperson/todo-rs/";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/?rev=9eab59f3e71ea3a725e4817d8dcf0da0824ad19d";
+      url = "github:nix-community/home-manager/";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    catppuccin.url = "github:catppuccin/nix/?rev=d75e3fe67f49728cb5035bc791f4b9065ff3a2c9";
-    nix-alien.url = "github:thiagokokada/nix-alien/?rev=e62b3ad75e8c9a5e505fc78b9b40eed1178634cb";
-    hyprland.url = "github:hyprwm/Hyprland/?rev=88326075743a677e76645ff163b392490419d4de";
+    catppuccin = {
+      url = "github:catppuccin/nix/?rev=d75e3fe67f49728cb5035bc791f4b9065ff3a2c9";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
+
+    nix-alien = {
+      url = "github:thiagokokada/nix-alien/?rev=e62b3ad75e8c9a5e505fc78b9b40eed1178634cb";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
 
     niri = {
       url = "github:sodiboo/niri-flake/?rev=e3d9f9b891a265b58c8bea73e79d77596da701fe";
