@@ -48,11 +48,12 @@
           # Next sections include libinput settings.
           # Omitting settings disables them, or leaves them at their default values.
           touchpad = {
-            tap = true;
+            tap = false;
             accel-speed = 0.35;
             accel-profile = "flat";
             scroll-method = "two-finger";
             natural-scroll = false;
+            dwt = true;
             # disabled-on-external-mouse
           };
 

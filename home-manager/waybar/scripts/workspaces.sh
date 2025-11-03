@@ -33,26 +33,29 @@ fi
 display="$display\n"
 
 if [[ active_workspace != "" ]]; then
-ids=($(echo $window_data | jq "sort_by(.layout | .pos_in_scrolling_layout | .[0]) | .[] | if (.workspace_id == ${active_workspace} and (.layout | .pos_in_scrolling_layout | .[1]) == 1) then .id else empty end"))
-display="$display "
-for id in "${ids[@]}"; do
-  width=$(echo $window_data | jq ".[] | if .id == $id then (.layout | .tile_size | .[0] / 476 | floor) else empty end")
-  column=$(echo $window_data | jq ".[] | if .id == $id then (.layout | .pos_in_scrolling_layout | .[0]) else empty end")
-  active=$(echo $window_data | jq ".[] | if .workspace_id == ${active_workspace} and (.layout | .pos_in_scrolling_layout | .[0]) == $column and .is_focused then true else empty end")
-  if [[ "$active" == "true" ]]; then
-    display="$display<span color=\\\"#8AADF4\\\">"
-  fi
-
-  for _ in $(seq 1 $width); do
-    display="$display█"
-  done
-
-  if [[ "$active" == "true" ]]; then
-    display="$display</span>"
-  fi
-
+  ids=($(echo $window_data | jq "sort_by(.layout | .pos_in_scrolling_layout | .[0]) | .[] | select(.workspace_id == ${active_workspace} and (.layout | .pos_in_scrolling_layout | .[1]) == 1) | .id"))
   display="$display "
-done
+
+  workspace_size=$(echo $window_data | jq "[.[] | select(.workspace_id == ${active_workspace} and (.layout | .pos_in_scrolling_layout | .[1]) == 1) | .layout .window_size .[0]] | add")
+
+  for id in "${ids[@]}"; do
+    width=$(echo $window_data | jq ".[] | if .id == $id then (.layout | .tile_size | .[0] / 476 | floor) else empty end")
+    column=$(echo $window_data | jq ".[] | if .id == $id then (.layout | .pos_in_scrolling_layout | .[0]) else empty end")
+    active=$(echo $window_data | jq ".[] | if .workspace_id == ${active_workspace} and (.layout | .pos_in_scrolling_layout | .[0]) == $column and .is_focused then true else empty end")
+    if [[ "$active" == "true" ]]; then
+      display="$display<span color=\\\"#8AADF4\\\">"
+    fi
+
+    for _ in $(seq 1 $width); do
+      display="$display█"
+    done
+
+    if [[ "$active" == "true" ]]; then
+      display="$display</span>"
+    fi
+
+    display="$display "
+  done
 fi
 display="$display\n"
 

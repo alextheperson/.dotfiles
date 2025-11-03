@@ -61,7 +61,7 @@
     ./wallpaper
     inputs.niri.homeModules.niri
     ./niri
-    ./swaylock
+    ./locking
     ./dmm.nix
     ./rink
   ];
@@ -115,6 +115,7 @@
   #   gtk.enable = true;
   #   x11.enable = true;
   # };
+
 
   gtk = {
     enable = true;
