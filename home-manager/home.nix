@@ -35,18 +35,12 @@
     kiwix
     kdePackages.filelight
     webcord
-    blender
     prusa-slicer
     thunderbird
     kicad
     superTuxKart
     xonotic
-    krita
-    gimp
-    inkscape
-    inkscape-extensions.inkstitch
     scribus
-    audacity
   ]) ++ (with pkgs.unstable; [
     floorp-bin
   ]) ++ (with inputs; [
@@ -64,6 +58,7 @@
     ./locking
     ./dmm.nix
     ./rink
+    ./art
   ];
 
   services.blueman-applet.enable = true;
