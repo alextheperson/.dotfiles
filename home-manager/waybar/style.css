@@ -110,6 +110,10 @@ window#waybar {
   color: @green;
 }
 
+#idle_inhibitor {
+  color: @peach;
+}
+
 #taskbar button.active {
   background: @blue;
   color: @base;

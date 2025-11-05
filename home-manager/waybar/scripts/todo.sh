@@ -43,4 +43,4 @@ todoText="$(
 
 )"
 
-echo "{\"text\": \"$todoText\", \"class\": \"todo\"}"
+echo "{\"text\": \"\\n\\n$todoText\", \"class\": \"todo\"}"

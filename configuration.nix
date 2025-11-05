@@ -107,10 +107,13 @@
 
   security.pam.services.swaylock = { };
 
-  environment.systemPackages = with pkgs; [
-    swaylock
-    unstable.niri
-  ];
+  environment.systemPackages =
+    with pkgs;
+    [
+      swaylock
+      unstable.niri
+      (import ./home-manager/wallpaper/pandora.nix { pkgs = pkgs; })
+    ];
 
   services.displayManager.ly = {
     enable = true;

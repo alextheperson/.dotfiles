@@ -1,10 +1,9 @@
 { config, pkgs, inputs, ... }:
 {
-  home.packages = with pkgs; [
-    wbg
-  ];
+  home.file.wallpapers.source = ../wallpaper;
+  home.file.wallpapers.target = ".config/wallpapers";
+  home.file.wallpapers.recursive = true;
 
-  home.file.wbg.source = ../wallpaper;
-  home.file.wbg.target = ".config/wallpapers";
-  home.file.wbg.recursive = true;
+  home.file.pandora.source = ./pandora.kdl;
+  home.file.pandora.target = ".config/pandora/pandora.kdl";
 }
