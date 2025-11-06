@@ -27,6 +27,10 @@
       cursor_stop_blinking_after = 15.0;
       confirm_os_window_close = -1;
       clipboard_control = "write-clipboard write-primary read-clipboard read-primary";
+      font_family = "FiraCode Nerd Font Mono";
+      bold_font = "auto";
+      italic_font = "auto";
+      bold_italic_font = "auto";
       font_size = 10;
     };
     themeFile = "Catppuccin-Macchiato";
