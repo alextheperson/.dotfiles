@@ -3,11 +3,10 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 { lib, config, pkgs, inputs, ... }: {
-  imports = [
+  imports = with inputs; [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-
-    inputs.apple-silicon.nixosModules.apple-silicon-support
+    apple-silicon.nixosModules.apple-silicon-support
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -110,8 +109,8 @@
   environment.systemPackages =
     with pkgs;
     [
-      swaylock
       unstable.niri
+      swaylock
       (import ./home-manager/wallpaper/pandora.nix { pkgs = pkgs; })
     ];
 

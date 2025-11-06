@@ -451,7 +451,7 @@
       };
 
       "Mod+T" = {
-        action.spawn-sh = "kill -n 10 $(ps -e | grep waybar | sed '$b;d' | xargs | cut -d ' ' -f 1)";
+        action.spawn-sh = "pkill -f \"waybar -c /home/alex/.config/waybar/todo-config.jsonc\" --signal 10";
         hotkey-overlay = {
           title = "Toggle Todo List";
         };

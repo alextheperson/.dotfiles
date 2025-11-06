@@ -2,8 +2,9 @@
 {
   imports = [
     ./keybinds.nix
-    ./window-rules.nix
+    ./rules.nix
     ./layout.nix
+    inputs.niri.homeModules.niri
   ];
 
   programs.niri = {
@@ -23,10 +24,9 @@
         };
 
         spawn-at-startup = [
-          { sh = "wbg ~/.config/wallpapers/0001.png"; }
           { argv = [ "waybar" ]; }
           { sh = "waybar -c ~/.config/waybar/todo-config.jsonc"; }
-          { argv = [ "floorp" ]; }
+          { argv = [ "pandora" ]; }
         ];
 
         prefer-no-csd = true;

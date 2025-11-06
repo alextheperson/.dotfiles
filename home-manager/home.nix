@@ -53,7 +53,6 @@
     ./shell.nix
     ./waybar
     ./wallpaper
-    inputs.niri.homeModules.niri
     ./niri
     ./locking
     ./dmm.nix
