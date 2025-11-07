@@ -58,6 +58,7 @@
     ./dmm.nix
     ./rink
     ./art
+    ./neovim
   ];
 
   services.blueman-applet.enable = true;
