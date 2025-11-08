@@ -173,22 +173,30 @@
     "layer": "top",
     "position": "bottom",
     "height": 30,
-    "modules-left": [ "wlr/taskbar"],
-    "modules-center": ["custom/workspaces"],
-    "modules-right": ["image#album-art",  "mpris" ],
+    "modules-left": [ "cffi/niri-taskbar" ],
+    "modules-center": [ "custom/workspaces" ],
+    "modules-right": [ "image#album-art",  "mpris" ],
     "reload_style_on_change":true,
 
-    "wlr/taskbar": {
-      "format": " {icon} <b>{name}  {short_state}</b> \n {title:.20} ",
-      "icon-size": 25,
-      "tooltip-format": "{title}",
-      "active-first": true,
-      "ignore-list": [
-        "kitty"
-      ],
-      "on-click": "activate",
-      "on-click-middle": "close",
-      "markup": true,
+    // "wlr/taskbar": {
+    //   "format": " {icon} <b>{name}  {short_state}</b> \n {title:.20} ",
+    //   "icon-size": 25,
+    //   "tooltip-format": "{title}",
+    //   "active-first": true,
+    //   "ignore-list": [
+    //     "kitty"
+    //   ],
+    //   "on-click": "activate",
+    //   "on-click-middle": "close",
+    //   "markup": true,
+    // },
+    
+    "cffi/niri-taskbar": {
+      "module_path": "/nix/store/fi8chv0psxy0ddb7wg58hakdhvfs93pp-niri-taskbar-0.3.0+niri.25.08/lib/libniri_taskbar.so", 
+      "notifications": {
+        "enable": true,
+      },
+      "show_all_outputs": true,
     },
 
     "image#album-art": {

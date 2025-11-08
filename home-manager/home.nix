@@ -41,8 +41,6 @@
     superTuxKart
     xonotic
     scribus
-  ]) ++ (with pkgs.unstable; [
-    floorp-bin
   ]) ++ (with inputs; [
     nix-alien.packages.aarch64-linux.default
     todo-rs.packages.aarch64-linux.default
