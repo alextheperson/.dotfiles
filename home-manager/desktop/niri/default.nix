@@ -65,6 +65,11 @@
           };
         };
 
+        cursor = {
+          theme = config.home.pointerCursor.name;
+          size = config.home.pointerCursor.size;
+        };
+
         # You can configure outputs by their name, which you can find
         # by running `niri msg outputs` while inside a niri instance.
         # The built-in laptop monitor is usually called "eDP-1".
@@ -93,5 +98,4 @@
         # Open the Firefox picture-in-picture player as floating by default.
       };
   };
-
 }

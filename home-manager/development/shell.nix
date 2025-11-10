@@ -15,6 +15,12 @@
     useTheme = "catppuccin_macchiato";
   };
 
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    silent = true;
+  };
+
   programs.kitty = {
     enable = true;
     keybindings = {

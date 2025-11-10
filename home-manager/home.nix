@@ -50,94 +50,12 @@
 
 
   imports = [
-    ./shell.nix
-    ./waybar
-    ./wallpaper
-    ./niri
-    ./locking
+    ./development
+    ./desktop
     ./dmm.nix
     ./rink
     ./art
-    ./neovim
   ];
-
-  services.blueman-applet.enable = true;
-  services.mako = {
-    enable = true;
-    settings = {
-      anchor = "bottom-right";
-      border-size = 2;
-      border-radius = 2;
-      default-timeout = 15000;
-    };
-  };
-
-  services.kdeconnect.enable = true;
-
-  programs.git = {
-    enable = true;
-    settings = {
-      user = {
-        email = "git@alexsol.is";
-        name = "Alex Solis";
-      };
-      credential = {
-        credentialStore = "secretservice";
-        helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
-      };
-      pull = {
-        rebase = true;
-      };
-      init = {
-        defaultBranch = "main";
-      };
-    };
-  };
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-    silent = true;
-  };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
-  # home.pointerCursor = {
-  #   package = pkgs.catppuccin-cursors.latteDark;
-  #   name = "catppuccin-latte-dark-cursors";
-  #   size = 16;
-  #   gtk.enable = true;
-  #   x11.enable = true;
-  # };
-
-
-  gtk = {
-    enable = true;
-    theme.name = "Adwaita";
-    # iconTheme.name = "Adwaita";
-    font.name = "Liberation Sans 11";
-    # cursorTheme.name = "Adwaita";
-    # cursorTheme.size = 24;
-    gtk2.extraConfig = ''
-      gtk-application-prefer-dark-theme = 1
-    '';
-    gtk3.extraConfig.gtk-application-prefer-dark-theme = 1;
-    gtk4.extraConfig.gtk-application-prefer-dark-theme = 1;
-  };
-
-  catppuccin = {
-    enable = true;
-    flavor = "macchiato";
-    accent = "blue";
-
-    nvim.enable = false;
-    waybar.enable = false;
-    kitty.enable = false;
-    hyprlock.enable = false;
-  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

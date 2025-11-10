@@ -111,7 +111,7 @@
     [
       unstable.niri
       swaylock
-      (import ./home-manager/wallpaper/pandora.nix { pkgs = pkgs; })
+      (import ./modules/pandora.nix { pkgs = pkgs; })
     ];
 
   services.displayManager.ly = {
