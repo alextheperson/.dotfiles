@@ -2,7 +2,7 @@
 
 {
   home.packages = [
-    (import ./niri-taskbar.nix { pkgs = pkgs; })
+    (import ../../modules/niri-taskbar.nix { pkgs = pkgs; })
   ];
 
   programs.waybar.enable = true;
