@@ -26,7 +26,11 @@
         spawn-at-startup = [
           { argv = [ "waybar" ]; }
           { sh = "waybar -c ~/.config/waybar/todo-config.jsonc"; }
-          { argv = [ "pandora" ]; }
+
+          # I hate this oh so much. However, pandora does not quit
+          # when I close niri, and I need to wait a bit before
+          # trying to re-open it
+          { sh = "pkill pandora; sleep 0.01s; pandora"; }
         ];
 
         prefer-no-csd = true;
