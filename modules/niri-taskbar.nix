@@ -1,7 +1,6 @@
 { pkgs }:
 with pkgs;
-rustPlatform.buildRustPackage
-rec {
+rustPlatform.buildRustPackage rec {
   pname = "niri-taskbar";
   version = "0.3.0+niri.25.08";
 

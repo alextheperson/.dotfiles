@@ -132,3 +132,19 @@ window#waybar {
 .workspace {
   font-size: 8px;
 }
+
+/*layout
+* box.horizontal.niri-taskbar
+* -> button.flat.image-button[.focused]
+*   -> alighnment
+*     -> box.horizontal
+* */
+
+.flat.image-button button {
+  min-width: 10px;
+  min-height: 10px;
+  padding: 5px;
+}
+
+.flat.image-button .horizontal {
+}
