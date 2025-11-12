@@ -24,11 +24,6 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
-  # setting WLR Graphic Card - needed for hyprland
-  environment.sessionVariables = {
-    WLR_DRM_DEVICES = "/dev/dri/card0";
-  };
-
   # Specify path to peripheral firmware files. - WARNING: NOT LEGAL TO SHARE
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
@@ -135,6 +130,8 @@
   fonts.fontDir.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 
   nixpkgs.config.permittedInsecurePackages = [
     "qtwebengine-5.15.19"
