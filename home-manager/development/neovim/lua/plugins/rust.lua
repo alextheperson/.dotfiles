@@ -26,4 +26,8 @@ return {
       servers = {},
     },
   },
+
+  {
+    "ron-rs/ron.vim",
+  },
 }

@@ -35,7 +35,8 @@
       clipboard_control = "write-clipboard write-primary read-clipboard read-primary";
       font_family = "FiraCode Nerd Font Mono";
       bold_font = "auto";
-      italic_font = "auto";
+      # There isn't italic FiraCode, so this is the best I can do.
+      italic_font = "family='JetBrainsMono Nerd Font' features='+ss19 +zero +calt cv03=1 cv12=1'";
       bold_italic_font = "auto";
       font_size = 10;
     };
