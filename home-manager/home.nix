@@ -41,6 +41,7 @@
     superTuxKart
     xonotic
     scribus
+    libreoffice-qt6-fresh
   ]) ++ (with pkgs.unstable; [
     floorp-bin
   ]) ++ (with inputs; [
@@ -56,6 +57,14 @@
     ./rink
     ./art
   ];
+
+  xdg.desktopEntries.nmtui = {
+    name = "NMTui";
+    genericName = "Network Manager";
+    exec = "nmtui";
+    terminal = true;
+    categories = [ "Network" ];
+  };
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
