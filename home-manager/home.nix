@@ -39,8 +39,6 @@
     prusa-slicer
     thunderbird
     kicad
-    superTuxKart
-    xonotic
     libreoffice-qt6-fresh
   ]) ++ (with pkgs.unstable; [
     floorp-bin
@@ -53,9 +51,10 @@
   imports = [
     ./development
     ./desktop
-    ./dmm.nix
     ./rink
     ./art
+    ./dmm.nix
+    ./games.nix
   ];
 
   xdg.desktopEntries.nmtui = {
