@@ -11,7 +11,6 @@
     package = pkgs.unstable.niri;
 
     enable = true;
-    # package = pkgs.niri-unstable;
     settings = {
       debug = {
         render-drm-device = "/dev/dri/renderD128";

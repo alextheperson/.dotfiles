@@ -36,7 +36,7 @@
     };
 
     niri = {
-      url = "github:sodiboo/niri-flake/?rev=e3d9f9b891a265b58c8bea73e79d77596da701fe";
+      url = "github:sodiboo/niri-flake/";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
@@ -59,7 +59,6 @@
                 #   config.allowUnfree = true;
                 # };
               })
-              # inputs.niri.overlays.niri
             ];
           }
           ./configuration.nix
