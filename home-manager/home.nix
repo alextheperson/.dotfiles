@@ -41,7 +41,6 @@
     kicad
     superTuxKart
     xonotic
-    scribus
     libreoffice-qt6-fresh
   ]) ++ (with pkgs.unstable; [
     floorp-bin
