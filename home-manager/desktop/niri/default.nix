@@ -56,7 +56,7 @@
           accel-profile = "flat";
           scroll-method = "two-finger";
           natural-scroll = false;
-          dwt = true;
+          # dwt = true;
           # disabled-on-external-mouse
         };
 
