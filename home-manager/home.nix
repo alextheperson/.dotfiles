@@ -10,7 +10,7 @@
     # Utils
     cliphist
     wayclip
-    rofi-wayland
+    rofi
     libnotify
     playerctl
     brightnessctl
