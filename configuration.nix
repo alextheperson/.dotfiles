@@ -105,8 +105,7 @@
     with pkgs;
     [
       unstable.niri
-      swaylock
-      (import ./modules/pandora.nix { pkgs = pkgs; })
+      swaylock-effects
     ];
 
   services.displayManager.ly = {

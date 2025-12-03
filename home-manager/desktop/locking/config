@@ -43,6 +43,15 @@ text-caps-lock-color=cad3f5
 text-ver-color=cad3f5
 text-wrong-color=cad3f5
 
+clock
+timestr=%H:%M:%S
+datestr=%a %d-%b-%y
+
+screenshots
+
+effect-blur=10x3
+effect-scale=0.5
+
 # Rosewater #f4dbd6
 # Flamingo #f0c6c6
 # Pink #f5bde6

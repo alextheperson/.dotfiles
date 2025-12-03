@@ -2,7 +2,7 @@
   services.swayidle =
     let
       # Lock command
-      lock = "${pkgs.swaylock}/bin/swaylock --daemonize";
+      lock = "${pkgs.swaylock-effects}/bin/swaylock --daemonize";
       display = status: "${pkgs.niri}/bin/niri msg action power-${status}-monitors";
     in
     {
