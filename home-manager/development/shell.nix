@@ -4,6 +4,12 @@
   programs.bash = {
     enable = true;
     # blesh.enable = true;
+    shellAliases = {
+      lls = "ls -lh";
+      ls = "ls -a --color=tty";
+      ccd = "cd ../";
+      icat = "kitten icat";
+    };
     bashrcExtra = ''
       eval "$(oh-my-posh init bash)"
     '';
