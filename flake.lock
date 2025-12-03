@@ -391,15 +391,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1763615793,
-        "narHash": "sha256-H68emR3VeBvG8L74wn42hGyy3SQm2jATq+Lxk2+mOiE=",
+        "lastModified": 1764120288,
+        "narHash": "sha256-3+YGZhUKgZmEGV74tvAKwLlAT9xr+Jlfe2HwIswyCNg=",
         "owner": "alextheperson",
         "repo": "todo-rs",
-        "rev": "525ee855b6c37bc6309ddbeb4fbf23f5f1ca9163",
+        "rev": "ff8162ba12317934127b60fb40a7d869be6d59c9",
         "type": "github"
       },
       "original": {
         "owner": "alextheperson",
+        "ref": "stable",
         "repo": "todo-rs",
         "type": "github"
       }

@@ -16,7 +16,7 @@
     };
 
     todo-rs = {
-      url = "github:alextheperson/todo-rs/";
+      url = "github:alextheperson/todo-rs/stable";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 

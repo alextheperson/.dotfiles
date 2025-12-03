@@ -22,6 +22,7 @@
     libsecret
     git-credential-manager
     dconf
+    pdftk
 
     # TUI Utils
     btop
