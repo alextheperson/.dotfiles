@@ -1,11 +1,7 @@
-{ pkgs, inputs, ... }: {
-  imports = [
-    inputs.catppuccin.homeModules.catppuccin
-  ];
-
+{ pkgs, ... }: {
   gtk = {
     enable = true;
-    theme.name = "Adwaita Dark";
+    theme.name = "Adwaita";
     # iconTheme.name = "Adwaita";
     font.name = "Liberation Sans 11";
     # cursorTheme.name = "Adwaita";

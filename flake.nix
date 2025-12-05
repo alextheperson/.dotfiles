@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     apple-silicon = {
-      url = "github:nix-community/nixos-apple-silicon/";
+      url = "github:nix-community/nixos-apple-silicon/?rev=b99bf9bf7445416fe55da09034fc4a6cd733805c";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -26,12 +26,12 @@
     };
 
     catppuccin = {
-      url = "github:catppuccin/nix/";
+      url = "github:catppuccin/nix/?rev=d75e3fe67f49728cb5035bc791f4b9065ff3a2c9";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     nix-alien = {
-      url = "github:thiagokokada/nix-alien/";
+      url = "github:thiagokokada/nix-alien/?rev=e62b3ad75e8c9a5e505fc78b9b40eed1178634cb";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -71,6 +71,7 @@
             home-manager.users.alex = {
               imports = [
                 ./home-manager/home.nix
+                inputs.catppuccin.homeModules.catppuccin
               ];
             };
 
