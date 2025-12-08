@@ -15,5 +15,8 @@
 
     # Audio
     audacity
+
+    # Video
+    kdePackages.kdenlive
   ];
 }
