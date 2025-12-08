@@ -60,7 +60,7 @@
   xdg.desktopEntries.nmtui = {
     name = "NMTui";
     genericName = "Network Manager";
-    exec = "nmtui";
+    exec = "sudo nmtui";
     terminal = true;
     categories = [ "Network" ];
   };
