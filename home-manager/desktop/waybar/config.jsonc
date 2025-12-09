@@ -3,9 +3,9 @@
     "layer": "top",
     "position": "top",
     "height": 23,
-    "modules-left": [ "custom/logo", "cpu", "memory", "temperature", "disk", "custom/powerDraw"],
+    "modules-left": [ "custom/logo", "cpu", "memory", "temperature", "disk", "custom/powerDraw", "network#speed"],
     "modules-center": [ "clock" , "custom/weather"],
-    "modules-right": [ "idle_inhibitor", "backlight", "pulseaudio", "custom/colorpicker", "bluetooth", "network", "battery" ],
+    "modules-right": [ "idle_inhibitor", "backlight", "pulseaudio", "custom/colorpicker", "bluetooth", "network#info", "battery" ],
     "reload_style_on_change":true,
 
     "custom/logo": {
@@ -42,15 +42,15 @@
 
     "memory": {
       "format": "\uf538 {percentage}% ",
-      "on-click": "foot btop",
+      "tooltip-format": "Memory\n{used}/{total} ({percentage}%)\n{avail} available\nSwap\n{swapUsed}/{swapTotal} ({swapPercentage}%)\n{swapAvail} available"
     },
 
     "cpu": {
       "interval": 1,
-      "format": "<span background=\"#363a4f\">{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}<span color=\"#b7bdf8\">{icon8}{icon9}</span></span> ",
+      "format": "<span background=\"#363a4f\">{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}<span color=\"#b7bdf8\">{icon8}{icon9}</span></span>  {usage:2}% ",
       "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
       "markup": true,
-      "on-click": "foot btop",
+      "tooltip-format": "{load}%\t{frequency}\nCore 0\t{usage0}\nCore 1\t{usage1}\nCore 2\t{usage2}\nCore 3\t{usage3}\nCore 4\t{usage4}\nCore 5\t{usage5}\nCore 6\t{usage6}\nCore 7\t{usage7}\nCore 8\t{usage8}\nCore 9\t{usage9}",
     },
 
     "temperature": {
@@ -58,7 +58,6 @@
       "format-critical": " {temperatureC}°C",
       "interval": 1,
       "critical-threshold": 80,
-      "on-click": "foot btop",
     },
 
     "custom/powerDraw": {
@@ -66,7 +65,13 @@
       "interval": 1,
       "exec": "~/.config/waybar/scripts/powerdraw.sh",
       "return-type": "json",
-      "on-click": "foot btop",
+    },
+
+    "network#speed": {
+      "format-wifi": " {bandwidthDownBits}  {bandwidthUpBits} ",
+      "format-ethernet":" ",
+      "format-disconnected": " ",
+      "tooltip-format": "{ipaddr}\nTotal:\t{bandwidthTotalBytes}\t{bandwidthUpBits}\n\t{bandwidthDownBits}\n",
     },
 
     "backlight": {
@@ -125,14 +130,13 @@
       "tooltip-format": "{icon} {volume}%\n{desc}"
     },
 
-    "network": {
+    "network#info": {
           "format-wifi": "  {essid} ",
           "format-ethernet":" ",
           "format-disconnected": " ",
           "tooltip-format": "{ipaddr}",
-          "tooltip-format-wifi": "{essid} ({signalStrength}%)  | {ipaddr}",
-          "tooltip-format-ethernet": "{ifname} 🖧 | {ipaddr}",
-          "on-click": "networkmanager_dmenu"
+          "tooltip-format-wifi": "{essid} {frequency}GHz ({signalStrength}%)   | {ipaddr}",
+          "tooltip-format-ethernet": "{ifname}   | {ipaddr}",
         },
 
     "battery": {
