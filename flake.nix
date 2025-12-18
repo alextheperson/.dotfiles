@@ -1,7 +1,6 @@
 # /etc/nixos/flake.nix
 {
   inputs = {
-    # I can't wait till 25.11 is stable!!
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -10,10 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    dmm = {
-      url = "tarball+https://git.fawkes.io/mtnash/dmm/archive/stable.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
+    # dmm = {
+    #   url = "tarball+https://git.fawkes.io/mtnash/dmm/archive/stable.tar.gz";
+    #   inputs.nixpkgs.follows = "nixpkgs-stable";
+    # };
 
     todo-rs = {
       url = "github:alextheperson/todo-rs/stable";

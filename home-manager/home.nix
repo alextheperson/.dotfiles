@@ -55,7 +55,7 @@
     ./desktop
     ./rink
     ./art
-    ./dmm.nix
+    # ./dmm.nix
     ./games.nix
   ];
 
