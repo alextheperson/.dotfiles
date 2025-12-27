@@ -10,7 +10,7 @@
     # Utils
     cliphist
     wayclip
-    rofi-wayland
+    rofi
     libnotify
     playerctl
     brightnessctl
@@ -40,8 +40,10 @@
     thunderbird
     kicad
     libreoffice-qt6-fresh
-  ]) ++ (with pkgs.unstable; [
+
     floorp-bin
+  ]) ++ (with pkgs.unstable; [
+    # Unstable pkgs
   ]) ++ (with inputs; [
     nix-alien.packages.aarch64-linux.default
     todo-rs.packages.aarch64-linux.default
@@ -53,7 +55,7 @@
     ./desktop
     ./rink
     ./art
-    ./dmm.nix
+    # ./dmm.nix
     ./games.nix
   ];
 

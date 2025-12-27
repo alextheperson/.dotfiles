@@ -14,7 +14,6 @@ rec {
     hash = "sha256-2CHU3qbqA70RXwz1jTmQgo60VT8SuNTfTYIZEKZuRwA=";
   };
 
-  # installFlags = [ "PREFIX=$(out)" ];
   outputs = [
     "out"
   ];
