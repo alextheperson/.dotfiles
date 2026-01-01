@@ -9,14 +9,20 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    # dmm = {
-    #   url = "tarball+https://git.fawkes.io/mtnash/dmm/archive/stable.tar.gz";
-    #   inputs.nixpkgs.follows = "nixpkgs-stable";
-    # };
+    dmm = {
+      url = "tarball+https://git.fawkes.io/mtnash/dmm/archive/stable.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
 
     todo-rs = {
       url = "github:alextheperson/todo-rs/stable";
       inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
+
+    vicinae = {
+      url = "github:vicinaehq/vicinae";
+      # Cannot follow nixpkgs, because that misses the Cachix cache, without
+      # which, the build fails.
     };
 
     home-manager = {

@@ -1,6 +1,6 @@
 { ...
 }: {
-  programs.niri. settings.binds =
+  programs.niri.settings.binds =
     {
 
       # Most keybinds can use Shift to move the current window/workspace instead of changing focus.
@@ -25,11 +25,11 @@
         hotkey-overlay.title = "Open QAT";
       };
       "Mod+R" = {
-        action.spawn-sh = "rofi -show drun";
+        action.spawn-sh = "vicinae toggle";
         hotkey-overlay.title = "Application Launcher";
       };
       "Mod+Space" = {
-        action.spawn-sh = "rofi -show drun";
+        action.spawn-sh = "vicinae toggle";
         hotkey-overlay.title = "Application Launcher";
       };
       "Super+Alt+L" = {
@@ -90,7 +90,7 @@
         action.toggle-overview = [ ];
       };
       "XF86Search" = {
-        action.spawn-sh = "pkill rofi || rofi -show drun";
+        action.spawn-sh = "vicinae toggle";
       };
       "XF86Sleep" = {
         action.spawn = [ "swaylock" ];

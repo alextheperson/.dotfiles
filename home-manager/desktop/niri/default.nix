@@ -24,6 +24,7 @@
       spawn-at-startup = [
         { argv = [ "waybar" ]; }
         { sh = "waybar -c ~/.config/waybar/todo-config.jsonc"; }
+        { sh = "vicinae server"; }
 
         # I hate this oh so much. However, pandora does not quit
         # when I close niri, and I need to wait a bit before
