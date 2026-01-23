@@ -39,6 +39,7 @@
     thunderbird
     kicad
     libreoffice-qt6-fresh
+    obs-studio
 
     floorp-bin
   ]) ++ (with pkgs.unstable; [
