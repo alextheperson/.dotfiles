@@ -54,6 +54,7 @@
     ./desktop
     ./rink
     ./art
+    ./fonts
     # ./dmm.nix
     ./games.nix
   ];
