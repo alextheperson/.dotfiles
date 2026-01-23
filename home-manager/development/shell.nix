@@ -32,7 +32,8 @@
     keybindings = {
       "ctrl+c" = "copy_and_clear_or_interrupt";
       "ctrl+v" = "paste_from_clipboard";
-      "ctrl+k" = "clear_terminal reset active";
+      "ctrl+k" = "clear_terminal to_cursor active";
+      "ctrl+apostrophe" = "launch --type=os-window --cwd=current";
     };
     settings = {
       window_margin_width = 5;
