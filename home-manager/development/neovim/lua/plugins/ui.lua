@@ -125,4 +125,5 @@ return {
     },
   },
   { "lewis6991/satellite.nvim" },
+  -- { "3rd/image.nvim" },
 }
