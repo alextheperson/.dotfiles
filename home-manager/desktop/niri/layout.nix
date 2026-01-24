@@ -18,7 +18,7 @@
     ];
 
     # You can change the default width of the new windows.
-    default-column-width = { proportion = 1.0 / 3.0; };
+    default-column-width = { proportion = 2.0 / 3.0; };
 
     # You can change how the focus ring looks.
     # remeber that colors can be gardients too
