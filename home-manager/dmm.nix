@@ -1,6 +1,6 @@
-{ inputs, ... }: {
+{ inputs, pkgs, ... }: {
   home.packages = with inputs; [
-    dmm.packages.aarch64-linux.default
+    dmm.packages.${pkgs.system}.default
   ];
 
   xdg.desktopEntries = {

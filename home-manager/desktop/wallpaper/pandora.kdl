@@ -1,5 +1,12 @@
 // should go in ~/.config/pandora/pandora.kdl (or $XDG_CONFIG_HOME/pandora/pandora.kdl)
+// Display for Serafina
 output "eDP-1" {
+    image "~/.config/wallpapers/0001.png"
+    mode "scroll-vertical"
+}
+
+// Display for Iorek
+output "LVDS-1" {
     image "~/.config/wallpapers/0001.png"
     mode "scroll-vertical"
 }

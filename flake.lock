@@ -46,11 +46,11 @@
     },
     "crane": {
       "locked": {
-        "lastModified": 1748047550,
-        "narHash": "sha256-t0qLLqb4C1rdtiY8IFRH5KIapTY/n3Lqt57AmxEv9mk=",
+        "lastModified": 1767461147,
+        "narHash": "sha256-TH/xTeq/RI+DOzo+c+4F431eVuBpYVwQwBxzURe7kcI=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "b718a78696060df6280196a6f992d04c87a16aef",
+        "rev": "7d59256814085fd9666a2ae3e774dc5ee216b630",
         "type": "github"
       },
       "original": {
@@ -84,11 +84,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1748894836,
-        "narHash": "sha256-x6g8OVKw3KW4LfE56nn0eyOOtweIzzB+ohiQ4pjy4tc=",
-        "rev": "e17059b308699b7fe60764b5c22e0872af04939b",
+        "lastModified": 1767542083,
+        "narHash": "sha256-ZxoaOl/pipDzk13KWdPY+157A8rnxV5ZFKMTrFy72KY=",
+        "rev": "a4e55e76db9c5e9c11ac9248d9cd0d9c8b7d366f",
         "type": "tarball",
-        "url": "https://git.fawkes.io/api/v1/repos/mtnash/dmm/archive/e17059b308699b7fe60764b5c22e0872af04939b.tar.gz"
+        "url": "https://git.fawkes.io/api/v1/repos/mtnash/dmm/archive/a4e55e76db9c5e9c11ac9248d9cd0d9c8b7d366f.tar.gz"
       },
       "original": {
         "type": "tarball",
@@ -356,11 +356,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748832016,
-        "narHash": "sha256-TQSaFa1wWJr6GOs+K8lecK4AKKr8k6mwxHIPCOmVkgs=",
+        "lastModified": 1767495280,
+        "narHash": "sha256-hEEgtE/RSRigw8xscchGymf/t1nluZwTfru4QF6O1CQ=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "7ec2ea005b600dac9436a7c5c6b66d960cbfcea2",
+        "rev": "cb24c5cc207ba8e9a4ce245eedd2d37c3a988bc1",
         "type": "github"
       },
       "original": {
@@ -423,11 +423,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1764723319,
-        "narHash": "sha256-GdZYQqWjR21wAofh6ACLzpNjMqT9R1vNYC/OOww5YvE=",
+        "lastModified": 1769295910,
+        "narHash": "sha256-9dqQbDqqsRcpD/qXAue0imfNSAez/O5Vshh5HWRgg1I=",
         "owner": "alextheperson",
         "repo": "todo-rs",
-        "rev": "177c968f3130db94a6607263ee87e830a6faa132",
+        "rev": "db0d5af09c519a089645698a52afea808997fce8",
         "type": "github"
       },
       "original": {

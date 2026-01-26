@@ -73,9 +73,7 @@
         size = config.home.pointerCursor.size;
       };
 
-      # You can configure outputs by their name, which you can find
-      # by running `niri msg outputs` while inside a niri instance.
-      # The built-in laptop monitor is usually called "eDP-1".
+      # Serafina Display
       outputs."eDP-1" = {
         mode = {
           width = 3456;
@@ -83,6 +81,21 @@
           refresh = 59.940;
         };
         scale = 1.15;
+        transform = {
+          flipped = false;
+          rotation = 0;
+        };
+        # position x=1280 y=0
+      };
+
+      # Iorek Display
+      outputs."LVDS-1" = {
+        mode = {
+          width = 1366;
+          height = 768;
+          refresh = 60.013;
+        };
+        scale = 1;
         transform = {
           flipped = false;
           rotation = 0;

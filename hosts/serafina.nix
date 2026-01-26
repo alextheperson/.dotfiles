@@ -5,7 +5,7 @@
 { lib, config, pkgs, inputs, ... }: {
   imports = with inputs; [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ../hardware/serafina.nix
     apple-silicon.nixosModules.apple-silicon-support
   ];
 
@@ -25,7 +25,7 @@
   time.timeZone = "America/New_York";
 
   # Specify path to peripheral firmware files. - WARNING: NOT LEGAL TO SHARE
-  hardware.asahi.peripheralFirmwareDirectory = ./firmware;
+  hardware.asahi.peripheralFirmwareDirectory = ../firmware;
 
   # Collect garbage, and delete generations more than 14 days old
   nix.gc = {

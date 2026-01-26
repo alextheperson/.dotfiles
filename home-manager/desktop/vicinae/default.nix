@@ -3,7 +3,7 @@
   # that I made this, those didn't seem to work. You should try it to see if
   # it works now.
   home.packages = [
-    inputs.vicinae.packages.aarch64-linux.default
+    inputs.vicinae.packages.${pkgs.system}.default
   ];
 
   # I write the config as jsonc, for accurate syntax highlighting, but it needs
