@@ -1,7 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+  # Wayland, X, etc. support for session vars
+  # systemd.user.sessionVariables = config.home-manager.users.alex.home.sessionVariables;
+
   gtk = {
     enable = true;
-    theme.name = "Adwaita";
+    theme.name = "Adwaita-dark";
+    theme.package = pkgs.gnome-themes-extra;
     # iconTheme.name = "Adwaita";
     font.name = "Liberation Sans 11";
     # cursorTheme.name = "Adwaita";
