@@ -11,6 +11,12 @@ output "LVDS-1" {
     mode "scroll-vertical"
 }
 
+// External Display
+output "HDMI-A-1" {
+    image "~/.config/wallpapers/0001.png"
+    mode "scroll-vertical"
+}
+
 animation {
     // Slow down animation by this factor. Values below 1 speeds up instead.
     // slowdown 0.5
