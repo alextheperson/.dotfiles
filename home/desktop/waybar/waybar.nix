@@ -1,7 +1,8 @@
-{ config, pkgs, inputs, ... }:
+cores: { config, pkgs, inputs, lib, ... }:
 (
   let
-    niri-taskbar = (import ../../../modules/niri-taskbar.nix { pkgs = pkgs; });
+    niri-taskbar = (import ../../../packages/niri-taskbar.nix { pkgs = pkgs; });
+    config-generator = (import ./primary-config.nix);
   in
   {
     home.packages = [
@@ -19,5 +20,8 @@
     home.file.waybar.source = ../waybar;
     home.file.waybar.target = ".config/waybar";
     home.file.waybar.recursive = true;
+
+    home.file.waybar_config.text = config-generator lib cores;
+    home.file.waybar_config.target = ".config/waybar/config.jsonc";
   }
 )

@@ -66,7 +66,7 @@
               })
             ];
           }
-          ./hosts/serafina.nix
+          ./modules/serafina.nix
 
           home-manager.nixosModules.home-manager
 
@@ -75,42 +75,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.alex = {
               imports = [
-                ./home-manager/serafina.nix
-                inputs.catppuccin.homeModules.catppuccin
-              ]; };
-
-            home-manager.extraSpecialArgs = { inherit inputs; };
-          }
-        ];
-      };
-    nixosConfigurations.iorek = nixpkgs-stable.lib.nixosSystem { 
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-
-        modules = [
-          {
-            nixpkgs.overlays = [
-              (final: prev: {
-                unstable = nixpkgs-unstable.legacyPackages.${prev.system};
-                # use this variant if unfree packages are needed:
-                # unstable = import nixpkgs-unstable {
-                #   inherit prev;
-                #   system = prev.system;
-                #   config.allowUnfree = true;
-                # };
-              })
-            ];
-          }
-          ./hosts/iorek.nix
-
-          home-manager.nixosModules.home-manager
-
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.alex = {
-              imports = [
-                ./home-manager/iorek.nix
+                ./home/serafina.nix
                 inputs.catppuccin.homeModules.catppuccin
               ];
             };
@@ -118,6 +83,42 @@
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];
+      };
+    nixosConfigurations.iorek = nixpkgs-stable.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+
+      modules = [
+        {
+          nixpkgs.overlays = [
+            (final: prev: {
+              unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+              # use this variant if unfree packages are needed:
+              # unstable = import nixpkgs-unstable {
+              #   inherit prev;
+              #   system = prev.system;
+              #   config.allowUnfree = true;
+              # };
+            })
+          ];
+        }
+        ./modules/iorek.nix
+
+        home-manager.nixosModules.home-manager
+
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.alex = {
+            imports = [
+              ./home/iorek.nix
+              inputs.catppuccin.homeModules.catppuccin
+            ];
+          };
+
+          home-manager.extraSpecialArgs = { inherit inputs; };
+        }
+      ];
     };
   };
 }

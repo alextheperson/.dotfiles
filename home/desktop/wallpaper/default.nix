@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 (
   let
-    pandora = (import ../../../modules/pandora.nix { pkgs = pkgs; });
+    pandora = (import ../../../packages/pandora.nix { pkgs = pkgs; });
   in
   {
     home.packages = [

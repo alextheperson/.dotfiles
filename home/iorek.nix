@@ -45,8 +45,8 @@
   ]) ++ (with pkgs.unstable; [
     # Unstable pkgs
   ]) ++ (with inputs; [
-    nix-alien.packages.aarch64-linux.default
-    todo-rs.packages.aarch64-linux.default
+    nix-alien.packages.${pkgs.system}.default
+    todo-rs.packages.${pkgs.system}.default
   ]);
 
 
@@ -58,6 +58,7 @@
     ./fonts
     ./dmm.nix
     ./games.nix
+    (import ./desktop/waybar/waybar.nix { performanceCores = 2; efficiencyCores = 0; })
   ];
 
   xdg.desktopEntries.nmtui = {

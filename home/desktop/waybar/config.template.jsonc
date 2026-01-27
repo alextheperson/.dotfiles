@@ -9,7 +9,10 @@
     "reload_style_on_change":true,
 
     "custom/logo": {
-      "format": " alex<span color=\"#cad3f5\">@</span>serafina ",
+      "format": " {} ",
+      "return-type": "json",
+      "exec": "~/.config/waybar/scripts/whoami.sh",
+      "interval": 3600,
       "tooltip": false
     },
 
@@ -47,7 +50,7 @@
 
     "cpu": {
       "interval": 1,
-      "format": "<span background=\"#363a4f\">{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}<span color=\"#b7bdf8\">{icon8}{icon9}</span></span>  {usage:2}% ",
+      "format": "<span background=\"#363a4f\">{icon0}{icon1}</span>  {usage:2}% ",
       "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
       "markup": true,
       "tooltip-format": "{load}%\t{frequency}\nCore 0\t{usage0}\nCore 1\t{usage1}\nCore 2\t{usage2}\nCore 3\t{usage3}\nCore 4\t{usage4}\nCore 5\t{usage5}\nCore 6\t{usage6}\nCore 7\t{usage7}\nCore 8\t{usage8}\nCore 9\t{usage9}",
@@ -141,16 +144,16 @@
         },
 
     "battery": {
-        "interval":1,
-        "states": {
-            "good": 80,
-            "warning": 20,
-            "critical": 5
-        },
-        "format": "{time:.11} {icon} {capacity}% ",
-        "format-charging": "{time:.11} 󰂄 {capacity}% ",
-        "format-plugged": " capacity}% ",
-            "format-icons": [
+      "interval":1,
+      "states": {
+          "good": 80,
+          "warning": 20,
+          "critical": 5
+      },
+      "format": "{time:.11} {icon} {capacity}% ",
+      "format-charging": "{time:.11} 󰂄 {capacity}% ",
+      "format-plugged": " {capacity}% ",
+      "format-icons": [
         "\udb80\u008e",
         "\udb80\u007a",
         "\udb80\u007b",
@@ -162,7 +165,7 @@
         "\udb80\udc81",
         "\udb80\udc82",
         "\udb80\udc79",
-        ],
+      ],
     },
 
     "idle_inhibitor": {
