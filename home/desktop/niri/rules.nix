@@ -49,14 +49,9 @@
         };
       }
 
-      # Set sizes and position for some quick-access apps
       {
         matches = [{ title = "btop"; }];
-        min-width = 1500;
-        max-width = 1500;
-        min-height = 1000;
-        max-height = 1000;
-        open-floating = true;
+        min-width = 720;
       }
 
       {

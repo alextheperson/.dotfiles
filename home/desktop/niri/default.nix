@@ -95,7 +95,7 @@
           height = 768;
           refresh = 60.013;
         };
-        scale = 1;
+        scale = 0.86;
         transform = {
           flipped = false;
           rotation = 0;
