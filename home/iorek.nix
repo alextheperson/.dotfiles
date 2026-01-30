@@ -21,25 +21,19 @@
     libsecret
     git-credential-manager
     dconf
-    pdftk
 
     # TUI Utils
     btop
     neofetch
     streamrip
     ncpamixer
-    pom
 
     # GUI Apps
     seahorse
-    kiwix
     kdePackages.filelight
     webcord
-    prusa-slicer
     thunderbird
-    kicad
     libreoffice-qt6-fresh
-    obs-studio
 
     floorp-bin
   ]) ++ (with pkgs.unstable; [
