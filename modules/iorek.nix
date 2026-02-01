@@ -24,6 +24,7 @@
       ./system/fonts.nix
       ./system/printing.nix
       ./system/battery.nix
+      ./system/fileshare.nix
 
       # Special Software
       ./software/ly.nix
@@ -42,7 +43,7 @@
   users.users.alex = {
     isNormalUser = true;
     description = "Alex Solis";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "disk"];
   };
 
   # This value determines the NixOS release from which the default

@@ -23,6 +23,7 @@
     ./system/fonts.nix
     ./system/printing.nix
     ./system/battery.nix
+    ./system/fileshare.nix
 
     # Special Software
     ./software/ly.nix
@@ -43,7 +44,7 @@
     isNormalUser = true;
     initialPassword = "changeme";
     description = "Alex Solis";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "disk" ];
   };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
