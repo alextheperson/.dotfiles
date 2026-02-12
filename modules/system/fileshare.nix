@@ -1,4 +1,4 @@
-{ ... }: {
+hostname: { ... }: {
   # Enable davfs2 for the shared drive
   services.davfs2 = {
     enable = true;
@@ -7,6 +7,11 @@
     settings = {
       globalSection = {
         use_locks = true;
+        lock_owner = "alex@${hostname}";
+        drop_weak_etags = true;
+        gui_optimize = true;
+        minimize_mem = true;
+        use_compression = true;
       };
     };
   };

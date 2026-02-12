@@ -24,7 +24,7 @@
       ./system/fonts.nix
       ./system/printing.nix
       ./system/battery.nix
-      ./system/fileshare.nix
+      (import ./system/fileshare.nix "iorek")
 
       # Special Software
       ./software/ly.nix
