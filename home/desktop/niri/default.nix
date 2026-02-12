@@ -29,7 +29,8 @@
         # I hate this oh so much. However, pandora does not quit
         # when I close niri, and I need to wait a bit before
         # trying to re-open it
-        { sh = "pkill pandora; sleep 0.01s; pandora"; }
+        # { sh = "pkill pandora; sleep 0.01s; pandora"; }
+        { sh = "swaybg -i ~/.config/wallpapers/0001.png -m fill"; }
       ];
 
       prefer-no-csd = true;
