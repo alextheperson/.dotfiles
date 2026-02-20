@@ -141,10 +141,10 @@
         };
       };
       "Mod+Shift+J" = {
-        action.move-window-down = [ ];
+        action.move-window-down-or-to-workspace-down = [ ];
       };
       "Mod+Shift+K" = {
-        action.move-window-up = [ ];
+        action.move-window-up-or-to-workspace-up = [ ];
       };
       "Mod+Shift+L" = {
         action.move-column-right = [ ];
