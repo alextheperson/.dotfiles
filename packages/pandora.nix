@@ -22,9 +22,7 @@ rec {
     description = "wayland wallpaper daemon that can bind to compositor IPC for dynamic scrolling";
     homepage = "https://github.com/PandorasFox/pandora/";
     license = lib.licenses.gpl2;
-    # maintainers = [ lib.maintainers.oncaged ];
 
-    # inherit (hyprland.meta) platforms;
     platforms = lib.platforms.linux;
   };
 }

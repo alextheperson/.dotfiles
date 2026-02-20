@@ -38,9 +38,7 @@ rustPlatform.buildRustPackage rec {
     description = "Niri taskbar module for Waybar";
     homepage = "https://github.com/LawnGnome/niri-taskbar/";
     license = lib.licenses.mit;
-    # maintainers = [ lib.maintainers.oncaged ];
 
-    # inherit (hyprland.meta) platforms;
     platforms = lib.platforms.linux;
   };
 }
