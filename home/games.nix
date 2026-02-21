@@ -3,5 +3,6 @@
     superTuxKart
     xonotic
     prismlauncher
+    openttd
   ];
 }
