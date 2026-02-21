@@ -7,6 +7,10 @@
     inputs.niri.homeModules.niri
   ];
 
+  home.packages = with pkgs; [
+    xwayland-satellite
+  ];
+
   programs.niri = {
     package = pkgs.unstable.niri;
 
