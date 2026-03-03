@@ -74,7 +74,7 @@
 
         focus-follows-mouse = {
           enable = true;
-          max-scroll-amount = "100%";
+          max-scroll-amount = "0%";
         };
       };
 
