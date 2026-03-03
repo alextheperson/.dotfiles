@@ -29,6 +29,7 @@
     streamrip
     ncpamixer
     pom
+    bluetui
 
     # GUI Apps
     seahorse
