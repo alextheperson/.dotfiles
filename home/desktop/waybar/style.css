@@ -25,6 +25,7 @@
 @define-color base #24273a;
 @define-color mantle #1e2030;
 @define-color crust #181926;
+@define-color deep-dark #11111b;
 
 * {
   border: none;
@@ -40,6 +41,10 @@
 
 window#waybar {
   background: @mantle;
+}
+
+window#waybar.notch-buffer {
+  background: @deep-dark;
 }
 
 .modules-left,
@@ -72,12 +77,12 @@ window#waybar {
   color: @sky;
 }
 
-#memory {
-  color: @maroon;
-}
-
 #cpu {
   color: @mauve;
+}
+
+#memory {
+  color: @peach;
 }
 
 #temperature {

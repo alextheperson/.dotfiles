@@ -1,8 +1,9 @@
-cores: { config, pkgs, inputs, lib, ... }:
+barSettings: { config, pkgs, inputs, ... }:
 (
   let
     niri-taskbar = (import ../../../packages/niri-taskbar.nix { pkgs = pkgs; });
-    config-generator = (import ./primary-config.nix);
+    menubar-config = (import ./menubar.nix);
+    todolist-config = (import ./todolist.nix);
   in
   {
     home.packages = [
@@ -17,11 +18,17 @@ cores: { config, pkgs, inputs, lib, ... }:
 
     programs.waybar.enable = true;
 
-    home.file.waybar.source = ../waybar;
-    home.file.waybar.target = ".config/waybar";
-    home.file.waybar.recursive = true;
+    home.file.waybar_scripts.source = ./scripts;
+    home.file.waybar_scripts.target = ".config/waybar/scripts";
+    home.file.waybar_scripts.recursive = true;
 
-    home.file.waybar_config.text = config-generator lib cores;
-    home.file.waybar_config.target = ".config/waybar/config.jsonc";
+    home.file.waybar_styles.source = ./style.css;
+    home.file.waybar_styles.target = ".config/waybar/style.css";
+
+    home.file.waybar_menubar_config.text = builtins.toJSON (menubar-config barSettings);
+    home.file.waybar_menubar_config.target = ".config/waybar/menubar-config.json";
+
+    home.file.waybar_todolist_config.text = builtins.toJSON (todolist-config barSettings);
+    home.file.waybar_todolist_config.target = ".config/waybar/todo-config.json";
   }
 )

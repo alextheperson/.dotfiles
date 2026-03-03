@@ -26,8 +26,8 @@
       };
 
       spawn-at-startup = [
-        { argv = [ "waybar" ]; }
-        { sh = "waybar -c ~/.config/waybar/todo-config.jsonc"; }
+        { sh = "waybar -c ~/.config/waybar/menubar-config.json"; }
+        { sh = "waybar -c ~/.config/waybar/todo-config.json"; }
         { sh = "vicinae server"; }
 
         # I hate this oh so much. However, pandora does not quit

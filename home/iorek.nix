@@ -52,7 +52,7 @@
     ./fonts
     ./dmm.nix
     ./games.nix
-    (import ./desktop/waybar/waybar.nix { performanceCores = 2; efficiencyCores = 0; })
+    (import ./desktop/waybar/waybar.nix { performanceCores = 2; efficiencyCores = 0; hasNotch = false; })
   ];
 
   xdg.desktopEntries.nmtui = {
