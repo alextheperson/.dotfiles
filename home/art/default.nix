@@ -18,5 +18,6 @@
 
     # Video
     kdePackages.kdenlive
+    vlc
   ];
 }
