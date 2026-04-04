@@ -3,7 +3,7 @@
     ./niri
     ./locking
     ./wallpaper
-    ./vicinae
+    ./walker
     ./notifications.nix
     ./appearance.nix
   ];

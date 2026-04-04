@@ -1,7 +1,7 @@
 { ...
 }: (
   let
-    launcher = "vicinae toggle";
+    launcher = "walker";
     terminal = "kitty";
     terminalQuickAccess = "kitten quick-access-terminal";
     locker = "swaylock";

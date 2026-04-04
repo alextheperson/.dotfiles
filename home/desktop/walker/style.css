@@ -1,0 +1,94 @@
+@define-color rosewater #f4dbd6;
+@define-color flamingo #f0c6c6;
+@define-color pink #f5bde6;
+@define-color mauve #c6a0f6;
+@define-color red #ed8796;
+@define-color maroon #ee99a0;
+@define-color peach #f5a97f;
+@define-color yellow #eed49f;
+@define-color green #a6da95;
+@define-color teal #8bd5ca;
+@define-color sky #91d7e3;
+@define-color sapphire #7dc4e4;
+@define-color blue #8aadf4;
+@define-color lavender #b7bdf8;
+@define-color text #cad3f5;
+@define-color subtext1 #b8c0e0;
+@define-color subtext0 #a5adcb;
+@define-color overlay2 #939ab7;
+@define-color overlay1 #8087a2;
+@define-color overlay0 #6e738d;
+@define-color surface2 #5b6078;
+@define-color surface1 #494d64;
+@define-color surface0 #363a4f;
+@define-color base #24273a;
+@define-color mantle #1e2030;
+@define-color crust #181926;
+
+@define-color accent @blue;
+
+* {
+  all: unset;
+  font-family: "Fira Code";
+}
+
+.box-wrapper {
+  background: @mantle;
+  border-radius: 2px;
+  border: 2px solid @peach;
+}
+
+.input {
+  margin: 15px;
+  border: 1px solid @accent;
+  background: @base;
+  color: @text;
+  padding: 10px;
+}
+
+.list {
+  margin: 0 15px;
+}
+
+.item-box {
+  padding: 10px;
+  border-bottom: 1px solid @surface0;
+}
+
+child:selected .item-box {
+  background: @surface0;
+}
+
+.keybinds {
+  font-size: 0.8em;
+  background: @base;
+  padding: 7px;
+  border-top: 1px solid @accent;
+}
+
+.keybind {
+  border: 1px solid @overlay0;
+  border-radius: 4px;
+  padding: 5px;
+  margin-left: 7px;
+}
+
+.keybind-bind {
+  color: @subtext0;
+  font-size: 0.8em;
+}
+
+.item-image {
+  font-size: 32px;
+  -gtk-icon-size: 32px;
+  margin-right: 10px;
+}
+
+.item-subtext {
+  font-size: 0.9em;
+  color: @subtext0;
+}
+
+.item-quick-activation {
+  color: @subtext0;
+}
