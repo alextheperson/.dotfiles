@@ -36,6 +36,7 @@
     libreoffice-qt6-fresh
 
     floorp-bin
+    cinny-desktop
   ]) ++ (with pkgs.unstable; [
     # Unstable pkgs
   ]) ++ (with inputs; [

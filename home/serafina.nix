@@ -43,6 +43,7 @@
     obs-studio
 
     floorp-bin
+    cinny-desktop
   ]) ++ (with pkgs.unstable; [
     # Unstable pkgs
   ]) ++ (with inputs; [
