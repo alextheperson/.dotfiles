@@ -74,7 +74,8 @@
 
         focus-follows-mouse = {
           enable = true;
-          max-scroll-amount = "0%";
+          # For some reason, setting it to 0% makes it not work on some windows.
+          max-scroll-amount = "1%";
         };
       };
 
