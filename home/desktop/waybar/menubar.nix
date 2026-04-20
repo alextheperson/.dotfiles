@@ -8,7 +8,7 @@ in
   [{
     layer = "top";
     position = "top";
-    height = 32;
+    height = 19;
     name = "notch-buffer";
     reload_style_on_change = true;
     modules-left = [
