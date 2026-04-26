@@ -25,13 +25,7 @@
 
       # Change behavior for floating widows
       {
-        matches = [{ title = "plzfloat"; }];
-        default-column-width.fixed = 700;
-        default-window-height.fixed = 500;
-        min-width = 700;
-        max-width = 700;
-        min-height = 500;
-        max-height = 500;
+        matches = [{ title = "open-floating"; }];
         open-floating = true;
       }
 
@@ -50,19 +44,10 @@
       }
 
       {
+        # This is needed for small screens so that btop has enough space.
         matches = [{ title = "btop"; }];
         min-width = 720;
       }
-
-      {
-        matches = [{ title = "rink"; }];
-        default-floating-position = {
-          x = 3;
-          y = 3;
-          relative-to = "bottom-right";
-        };
-      }
-
     ];
 
     layer-rules = [ ];

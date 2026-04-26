@@ -3,11 +3,8 @@
   let
     launcher = "walker";
     terminal = "kitty";
-    terminalQuickAccess = "kitten quick-access-terminal";
     locker = "swaylock";
-    todoList = "pkill -f \"waybar -c /home/alex/.config/waybar/todo-config.json\" --signal 10";
-
-    toggleApplication = name: "pkill ${name} || kitty --title 'plzfloat ${name}' ${name}";
+    todoList = "pkill -f 'waybar -c /home/alex/.config/waybar/todo-config.json' --signal 10";
   in
   {
     programs.niri.settings.binds =
@@ -30,10 +27,6 @@
           hotkey-overlay.title = "Open Terminal";
         };
 
-        "Mod+grave" = {
-          action.spawn-sh = terminalQuickAccess;
-          hotkey-overlay.title = "Open QAT";
-        };
         "Mod+R" = {
           action.spawn-sh = launcher;
           hotkey-overlay.title = "Application Launcher";
@@ -483,20 +476,6 @@
           action.screenshot-window = [ ];
           hotkey-overlay = {
             title = "Take Window Screenshot";
-          };
-        };
-
-        "Mod+S" = {
-          action.spawn-sh = toggleApplication "rink";
-          hotkey-overlay = {
-            title = "Toggle Rink";
-          };
-        };
-
-        "Mod+M" = {
-          action.spawn-sh = toggleApplication "btop";
-          hotkey-overlay = {
-            title = "Toggle BTop";
           };
         };
 
