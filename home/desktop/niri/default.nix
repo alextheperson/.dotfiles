@@ -46,6 +46,8 @@
         lid-close = { action.spawn = [ "swaylock" "--daemonize" ]; };
       };
 
+      gestures.hot-corners.enable = true;
+
       input = {
         keyboard = {
           xkb = {

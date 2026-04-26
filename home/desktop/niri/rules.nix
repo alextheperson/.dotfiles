@@ -12,15 +12,10 @@
         clip-to-geometry = true;
       }
 
-      # Set default widths for some apps
+      # Change kitty to be thin by default
       {
         matches = [{ app-id = "kitty"; }];
         default-column-width.proportion = 1.0 / 3.0;
-      }
-
-      {
-        matches = [{ app-id = "floorp"; }];
-        default-column-width.proportion = 2.0 / 3.0;
       }
 
       # Change behavior for floating widows

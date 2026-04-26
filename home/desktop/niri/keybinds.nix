@@ -2,7 +2,7 @@
 }: (
   let
     launcher = "walker";
-    terminal = "kitty";
+    terminal = "kitty -1";
     locker = "swaylock";
     todoList = "pkill -f 'waybar -c /home/alex/.config/waybar/todo-config.json' --signal 10";
   in
@@ -497,6 +497,13 @@
 
         "Mod+V" = {
           action.center-column = [ ];
+        };
+
+        "Mod+B" = {
+          action.set-column-width = "50%";
+          hotkey-overlay = {
+            title = "Set to 50% width";
+          };
         };
 
         # The quit action will show a confirmation dialog to avoid accidental exits.
