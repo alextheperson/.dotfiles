@@ -1,5 +1,6 @@
 { ... }: {
-  time.timeZone = "America/New_York";
+  # time.timeZone = "America/New_York";
+  services.automatic-timezoned.enable = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
 
