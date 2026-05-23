@@ -40,6 +40,9 @@
       cursor_stop_blinking_after = 15.0;
       confirm_os_window_close = -1;
       clipboard_control = "write-clipboard write-primary read-clipboard read-primary";
+      background_opacity = 0.5;
+      background_blur = 1;
+      # transparent_background_colors = "#24273a@0.5";
       font_family = "FiraCode Nerd Font Mono";
       bold_font = "auto";
       # There isn't italic FiraCode, so this is the best I can do.

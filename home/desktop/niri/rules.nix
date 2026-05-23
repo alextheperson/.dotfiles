@@ -1,4 +1,4 @@
-{ ... }: {
+{ inputs, config, lib, pkgs, ... }: {
   programs.niri.settings = {
     window-rules = [
       # Add slight corner radii to all windows
@@ -17,7 +17,6 @@
         matches = [{ app-id = "kitty"; }];
         default-column-width.proportion = 1.0 / 3.0;
       }
-
       # Change behavior for floating widows
       {
         matches = [{ title = "open-floating"; }];
@@ -47,4 +46,29 @@
 
     layer-rules = [ ];
   };
+
+  # This is a terrible hack: https://github.com/sodiboo/niri-flake/issues/1721#issuecomment-4428164218
+    xdg.configFile.niri-config.source = let
+      inherit (inputs.niri.lib.internal) validated-config-for;
+      inherit (config.programs.niri) finalConfig package;
+    in
+      lib.mkForce (
+        validated-config-for pkgs package ''
+          ${finalConfig}
+
+          window-rule {
+            background-effect {
+              blur true
+            }
+          }
+
+          blur {
+            passes 2
+            offset 3
+            noise 0.05
+            saturation 0.75
+          }
+        ''
+      );
+
 }

@@ -23,17 +23,17 @@
     # You can change how the focus ring looks.
     # remeber that colors can be gardients too
     focus-ring = {
-      enable = true;
+      enable = false;
       width = 2;
       active.color = "#8aadf4";
       urgent.color = "#ed8796";
     };
 
     border = {
-      enable = false;
+      enable = true;
       width = 2;
-      active.color = "#f5a97f";
-      inactive.color = "#b7bdf8";
+      active.color = "#8aadf4";
+      inactive.color = "#24273a";
       urgent.color = "#ed8796";
     };
 
