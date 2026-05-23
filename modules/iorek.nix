@@ -18,6 +18,7 @@
 
       # Base System
       ./system/nixos.nix
+      ./system/console.nix
       ./system/network.nix
       ./system/locale.nix
       ./system/cachix.nix
@@ -27,9 +28,10 @@
       (import ./system/fileshare.nix "iorek")
 
       # Special Software
-      ./software/ly.nix
+      (import ./software/ly.nix { batteryName = "BAT0"; margin = 0; })
       ./software/niri.nix
       ./software/swaylock.nix
+      ./software/system-packages.nix
     ];
 
   # Bootloader.

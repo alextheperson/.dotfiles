@@ -4,6 +4,8 @@
     font-awesome
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-code
+
+    libre-franklin 
   ];
   fonts.fontDir.enable = true;
 }

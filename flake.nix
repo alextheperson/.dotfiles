@@ -30,19 +30,24 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    elephant = {
-      url = "github:abenz1267/elephant";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
+    # elephant = {
+    #   url = "github:abenz1267/elephant";
+    #   inputs.nixpkgs.follows = "nixpkgs-stable";
+    # };
 
     walker = {
       url = "github:abenz1267/walker";
-      inputs.elephant.follows = "elephant";
+      # inputs.elephant.follows = "elephant";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     catppuccin = {
       url = "github:catppuccin/nix/?rev=d75e3fe67f49728cb5035bc791f4b9065ff3a2c9";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
+
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 

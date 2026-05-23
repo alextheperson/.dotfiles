@@ -1,11 +1,12 @@
 { config, pkgs, inputs, ... }:
 {
-  home.packages = with pkgs; [
-    tree-sitter
-  ];
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+    withNodeJs = true;
+    withPython3 = true;
+    withRuby = true;
+    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
   };
 
   #home.file.neovim.source = ../neovim;

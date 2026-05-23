@@ -14,6 +14,17 @@
           anchor_bottom = true;
         };
 
+        emergencies = [
+          {
+            text = "Floorp";
+            command = "floorp";
+          }
+          {
+            text = "Kitty";
+            command = "kitty";
+          }
+        ];
+
         providers = {
           default = [
             "bluetooth"

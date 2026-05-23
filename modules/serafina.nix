@@ -17,6 +17,7 @@
     # Base System
     ./system/nixos.nix
     apple-silicon.nixosModules.apple-silicon-support
+    ./system/console.nix
     ./system/network.nix
     ./system/locale.nix
     ./system/cachix.nix
@@ -26,9 +27,10 @@
     (import ./system/fileshare.nix "serafina")
 
     # Special Software
-    ./software/ly.nix
+    (import ./software/ly.nix { batteryName = "macsmc-battery"; margin = 1; })
     ./software/niri.nix
     ./software/swaylock.nix
+    ./software/system-packages.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
