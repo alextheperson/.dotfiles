@@ -39,7 +39,7 @@
       ];
 
       prefer-no-csd = true;
-      screenshot-path = "~/Documents/pictures/screenshots/screenshot at %Y-%m-%d %H-%M-%S.png";
+      screenshot-path = "~/Pictures/screenshots/screenshot %Y-%b-%d at %H:%M:%S.png";
 
       switch-events = {
         # Lock the desktop when I close my laptop
