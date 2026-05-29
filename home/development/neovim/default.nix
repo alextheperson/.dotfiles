@@ -7,13 +7,9 @@
     withPython3 = true;
     withRuby = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+
+    plugins = [
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+    ];
   };
-
-  #home.file.neovim.source = ../neovim;
-  #home.file.neovim.target = ".config/nvim/";
-  #home.file.neovim.recursive = true;
-
-  # I have to do this for some tree-sitter parsers to generate
-  #home.file.tree-sitter.source = ./treesitter-config.json;
-  #home.file.tree-sitter.target = ".config/tree-sitter/config.json";
 }
