@@ -6,12 +6,14 @@ hostname: { ... }: {
     davUser = "alex";
     settings = {
       globalSection = {
-        use_locks = true;
-        lock_owner = "alex@${hostname}";
-        drop_weak_etags = true;
-        gui_optimize = true;
-        minimize_mem = true;
-        use_compression = true;
+        use_locks = false;
+	if_match_bug = true;
+	use_expect100 = false;
+        # lock_owner = "alex@${hostname}";
+        # drop_weak_etags = true;
+        # gui_optimize = true;
+        # minimize_mem = true;
+        # use_compression = true;
       };
     };
   };

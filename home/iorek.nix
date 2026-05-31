@@ -24,7 +24,6 @@
 
     # TUI Utils
     btop
-    neofetch
     streamrip
     ncpamixer
 
@@ -40,8 +39,8 @@
   ]) ++ (with pkgs.unstable; [
     # Unstable pkgs
   ]) ++ (with inputs; [
-    nix-alien.packages.${pkgs.system}.default
-    todo-rs.packages.${pkgs.system}.default
+    nix-alien.packages.${pkgs.stdenv.hostPlatform.system}.default
+    todo-rs.packages.${pkgs.stdenv.hostPlatform.system}.default
   ]);
 
 

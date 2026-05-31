@@ -1,11 +1,11 @@
 # /etc/nixos/flake.nix
 {
   inputs = {
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     apple-silicon = {
-      url = "github:nix-community/nixos-apple-silicon/?rev=b99bf9bf7445416fe55da09034fc4a6cd733805c";
+      url = "github:nix-community/nixos-apple-silicon/";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -26,33 +26,22 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    # elephant = {
-    #   url = "github:abenz1267/elephant";
-    #   inputs.nixpkgs.follows = "nixpkgs-stable";
-    # };
-
     walker = {
       url = "github:abenz1267/walker";
-      # inputs.elephant.follows = "elephant";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     catppuccin = {
-      url = "github:catppuccin/nix/?rev=d75e3fe67f49728cb5035bc791f4b9065ff3a2c9";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
-
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+      url = "github:catppuccin/nix/";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     nix-alien = {
-      url = "github:thiagokokada/nix-alien/?rev=e62b3ad75e8c9a5e505fc78b9b40eed1178634cb";
+      url = "github:thiagokokada/nix-alien/";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 

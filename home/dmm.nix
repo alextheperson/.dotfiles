@@ -1,6 +1,6 @@
 { inputs, pkgs, ... }: {
   home.packages = with inputs; [
-    dmm.packages.${pkgs.system}.default
+    dmm.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   xdg.desktopEntries = {

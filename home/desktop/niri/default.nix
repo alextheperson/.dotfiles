@@ -28,7 +28,6 @@
       spawn-at-startup = [
         { sh = "waybar -c ~/.config/waybar/menubar-config.json"; }
         { sh = "waybar -c ~/.config/waybar/todo-config.json"; }
-        { sh = "elephant"; }
         { sh = "walker --gapplication-service"; }
 
         # I hate this oh so much. However, pandora does not quit

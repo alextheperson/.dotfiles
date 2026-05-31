@@ -25,7 +25,6 @@
 
     # TUI Utils
     btop
-    neofetch
     streamrip
     ncpamixer
     pom
@@ -47,8 +46,8 @@
   ]) ++ (with pkgs.unstable; [
     # Unstable pkgs
   ]) ++ (with inputs; [
-    nix-alien.packages.aarch64-linux.default
-    todo-rs.packages.aarch64-linux.default
+    nix-alien.packages.${pkgs.stdenv.hostPlatform.system}.default
+    todo-rs.packages.${pkgs.stdenv.hostPlatform.system}.default
   ]);
 
 
@@ -60,7 +59,7 @@
     ./fonts
     ./dmm.nix
     ./games.nix
-    (import ./desktop/waybar/waybar.nix { performanceCores = 8; efficiencyCores = 2; hasNotch = true; })
+    (import ./desktop/waybar/waybar.nix { performanceCores = 8; efficiencyCores = 2; hasNotch = false; })
   ];
 
   xdg.desktopEntries.nmtui = {
