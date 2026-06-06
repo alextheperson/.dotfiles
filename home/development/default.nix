@@ -2,6 +2,7 @@
   imports = [
     ./shell.nix
     ./git.nix
-    ./neovim
+    ./neovim.nix
+    ./lsp.nix
   ];
 }
