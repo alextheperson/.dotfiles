@@ -1,4 +1,5 @@
-#!/bin/sh
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p bash
 
 rosewater="#F4DBD6"
 flamingo="#F0C6C6"

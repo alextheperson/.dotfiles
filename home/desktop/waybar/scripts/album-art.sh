@@ -1,4 +1,5 @@
-#!/bin/sh
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p playerctl
 
 album_art=$(playerctl metadata mpris:artUrl)
 

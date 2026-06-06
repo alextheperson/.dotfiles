@@ -8,6 +8,7 @@ barSettings: { config, pkgs, inputs, ... }:
   {
     home.packages = [
       niri-taskbar
+      pkgs.playerctl
     ];
 
     # Allow access to CFFI modules in waybar

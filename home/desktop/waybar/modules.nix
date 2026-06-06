@@ -2,13 +2,13 @@
   # ===== Hardware Info =====
   disk = {
     interval = 30;
-    format = " {percentage_used}%";
-    tooltip-format = "{used} / {total}\n{free} ({percentage_free}%) free";
+    format = " {percentage_used:03}%";
+    tooltip-format = "{used} / {total}\n{free} ({percentage_free:03}%) free";
     path = "/";
   };
   memory = {
-    format = " {percentage}%";
-    tooltip-format = "Memory\n{used}/{total} ({percentage}%)\n{avail} available\nSwap\n{swapUsed}/{swapTotal} ({swapPercentage}%)\n{swapAvail} available";
+    format = " {percentage:03}%";
+    tooltip-format = "Memory\n{used}/{total} ({percentage:03}%)\n{avail} available\nSwap\n{swapUsed}/{swapTotal} ({swapPercentage:03}%)\n{swapAvail} available";
   };
 
   cpu = (
@@ -16,10 +16,11 @@
       # Generate strings for the CPU core graph
       performanceCoresString = builtins.concatStringsSep "" (builtins.genList (x: ''{icon${builtins.toString x}}'') performanceCores);
       efficiencyCoresString = builtins.concatStringsSep "" (builtins.genList (x: ''{icon${builtins.toString (x + performanceCores)}}'') efficiencyCores);
+      tooltipString = builtins.concatStringsSep "\n" (builtins.genList (x: ''Core ${builtins.toString x}\t{usage${builtins.toString x}}'') (performanceCores + efficiencyCores));
     in
     {
       interval = 1;
-      format = "<span background=\"#24273a\">${performanceCoresString}<span color=\"#b7bdf8\">${efficiencyCoresString}</span></span>  {usage:2}%";
+      format = "<span background=\"#24273a\">${performanceCoresString}<span color=\"#b7bdf8\">${efficiencyCoresString}</span></span>  {usage:03}%";
       format-icons = [
         "▁"
         "▂"
@@ -31,12 +32,12 @@
         "█"
       ];
       markup = true;
-      tooltip-format = "{load}%\t{frequency}\nCore 0\t{usage0}\nCore 1\t{usage1}\nCore 2\t{usage2}\nCore 3\t{usage3}\nCore 4\t{usage4}\nCore 5\t{usage5}\nCore 6\t{usage6}\nCore 7\t{usage7}\nCore 8\t{usage8}\nCore 9\t{usage9}";
+      tooltip-format = "{loa}%\t{frequency}\n${tooltipString}";
     }
   );
   temperature = {
-    format = " {temperatureC}°C";
-    format-critical = " {temperatureC}°C";
+    format = " {temperatureC:03}°C";
+    format-critical = " {temperatureC:03}°C";
     interval = 1;
     critical-threshold = 80;
   };
@@ -48,10 +49,10 @@
       warning = 20;
       critical = 5;
     };
-    format = "{time:.11} {icon} {capacity}%";
-    format-full = "{icon} {capacity}%";
-    format-charging = "{time:.11} 󰂄 {capacity}%";
-    format-plugged = " {capacity}%";
+    format = "{time:11} {icon} {capacity:03}%";
+    format-full = "{icon} {capacity:03}%";
+    format-charging = "{time:11} 󰂄 {capacity:03}%";
+    format-plugged = " {capacity:03}%";
     format-icons = [
       "󰂎"
       "󰁺"
@@ -69,28 +70,31 @@
   backlight = {
     # This seems to work on Serafina, though the backlight there is called "apple-panel-bl"
     device = "intel_backlight";
-    format = "{icon} {percent}%";
+    format = "{icon} {percent:03}%";
     format-icons = [
       ""
-      ""
-      ""
-      ""
-      ""
-      ""
-      ""
-      ""
-      ""
-      ""
-      ""
+      ""
+      ""
+      ""
+      ""
+      ""
+      ""
+      ""
+      ""
+      ""
+      ""
+      ""
+      ""
+      ""
     ];
   };
 
   # ===== Network =====
   "network#speed" = {
-    "format-wifi" = " {bandwidthDownBits}  {bandwidthUpBits}";
+    "format-wifi" = " {bandwidthDownBits:03}  {bandwidthUpBits:03}";
     format-ethernet = " ";
     format-disconnected = " ";
-    tooltip-format = "{ipaddr}\nTotal:\t{bandwidthTotalBytes}\t{bandwidthUpBits}\n\t{bandwidthDownBits}\n";
+    tooltip-format = "{ipaddr}\n\nTotal:\t{bandwidthTotalBytes}\n\t{bandwidthUpBits}\n\t{bandwidthDownBits}\n";
   };
   "network#info" = {
     format-wifi = "  {essid}";
@@ -105,12 +109,12 @@
     format-off = "󰂲";
     format-disabled = "󰂲";
     format-connected = "󰂴";
-    format-connected-battery = "󰂴 {device_battery_percentage}%";
+    format-connected-battery = "󰂴 {device_battery_percentage:03}%";
     format-no-controller = "";
     tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
     tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
     tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
-    tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage}%";
+    tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t{device_battery_percentage:03}%";
   };
 
   # ===== Window Layout =====
@@ -158,9 +162,9 @@
     };
   };
   pulseaudio = {
-    format = "{icon} {volume}%";
-    format-bluetooth = "󰂰 {volume}%";
-    format-muted = " {volume}%";
+    format = "{icon} {volume:03}%";
+    format-bluetooth = "󰂰 {volume:03}%";
+    format-muted = " {volume:03}%";
     format-icons = {
       headphones = "";
       bluetooth = "󰥰";
@@ -192,7 +196,7 @@
     tooltip = true;
   };
   "custom/powerDraw" = {
-    format = " {}w";
+    format = " {}";
     interval = 1;
     exec = "~/.config/waybar/scripts/powerdraw.sh";
     return-type = "json";

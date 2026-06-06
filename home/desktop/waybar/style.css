@@ -81,11 +81,13 @@ window#waybar.top label.module {
 }
 
 window#waybar.top-bar-notch label.module#clock {
+    /* This is the approximate width of the notch, and does not need to be changed */
     margin-right: 250px;
     border-right: 1px solid @surface0;
 }
 window#waybar.top-bar-notch label.module#custom-weather {
-    margin-right: 105px;
+    /* This is the difference in width between the clock and the weather, and may need to be changed */
+    margin-right: 104px;
 }
 
 label.module#custom-logo {

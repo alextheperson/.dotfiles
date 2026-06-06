@@ -1,8 +1,5 @@
-#!/bin/sh
-
-# DEPENDS ON:
-# niri IPC (niri msg)
-# jq
+#! /usr/bin/env nix-shell
+#! nix-shell -i bash -p niri jq
 
 # EXAMPLE OUTPUT:
 # ▀ ▀▀ ▀▀▀

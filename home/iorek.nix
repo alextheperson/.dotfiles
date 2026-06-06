@@ -8,19 +8,13 @@
 
   home.packages = (with pkgs; [
     # Utils
-    cliphist
-    wayclip
     libnotify
-    playerctl
     brightnessctl
-    fzf
     clang
-    jq
     unzip
     zip
     libsecret
     git-credential-manager
-    dconf
 
     # TUI Utils
     btop
