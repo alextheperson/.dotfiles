@@ -2,7 +2,7 @@
   # ===== Hardware Info =====
   disk = {
     interval = 30;
-    format = " {percentage_used}% ";
+    format = " {percentage_used}%";
     tooltip-format = "{used} / {total}\n{free} ({percentage_free}%) free";
     path = "/";
   };
@@ -19,7 +19,7 @@
     in
     {
       interval = 1;
-      format = "<span background=\"#363a4f\">${performanceCoresString}<span color=\"#b7bdf8\">${efficiencyCoresString}</span></span>  {usage:2}% ";
+      format = "<span background=\"#24273a\">${performanceCoresString}<span color=\"#b7bdf8\">${efficiencyCoresString}</span></span>  {usage:2}%";
       format-icons = [
         "▁"
         "▂"
@@ -35,21 +35,23 @@
     }
   );
   temperature = {
-    format = "  {temperatureC}°C ";
-    format-critical = "  {temperatureC}°C";
+    format = " {temperatureC}°C";
+    format-critical = " {temperatureC}°C";
     interval = 1;
     critical-threshold = 80;
   };
   battery = {
     interval = 1;
     states = {
+      full = 100;
       good = 80;
       warning = 20;
       critical = 5;
     };
-    format = "{time:.11} {icon} {capacity}% ";
-    format-charging = "{time:.11} 󰂄 {capacity}% ";
-    format-plugged = " {capacity}% ";
+    format = "{time:.11} {icon} {capacity}%";
+    format-full = "{icon} {capacity}%";
+    format-charging = "{time:.11} 󰂄 {capacity}%";
+    format-plugged = " {capacity}%";
     format-icons = [
       "󰂎"
       "󰁺"
@@ -67,7 +69,7 @@
   backlight = {
     # This seems to work on Serafina, though the backlight there is called "apple-panel-bl"
     device = "intel_backlight";
-    format = "{icon} {percent}% ";
+    format = "{icon} {percent}%";
     format-icons = [
       ""
       ""
@@ -85,13 +87,13 @@
 
   # ===== Network =====
   "network#speed" = {
-    "format-wifi" = " {bandwidthDownBits}  {bandwidthUpBits} ";
+    "format-wifi" = " {bandwidthDownBits}  {bandwidthUpBits}";
     format-ethernet = " ";
     format-disconnected = " ";
     tooltip-format = "{ipaddr}\nTotal:\t{bandwidthTotalBytes}\t{bandwidthUpBits}\n\t{bandwidthDownBits}\n";
   };
   "network#info" = {
-    format-wifi = "  {essid} ";
+    format-wifi = "  {essid}";
     format-ethernet = " ";
     format-disconnected = " ";
     tooltip-format = "{ipaddr}";
@@ -99,11 +101,11 @@
     tooltip-format-ethernet = "{ifname}   | {ipaddr}";
   };
   bluetooth = {
-    format-on = " ";
-    format-off = "󰂲 ";
-    format-disabled = "󰂲 ";
-    format-connected = "󰂴 ";
-    format-connected-battery = "󰂴 {device_battery_percentage}% ";
+    format-on = "";
+    format-off = "󰂲";
+    format-disabled = "󰂲";
+    format-connected = "󰂴";
+    format-connected-battery = "󰂴 {device_battery_percentage}%";
     format-no-controller = "";
     tooltip-format = "{controller_alias}\t{controller_address}\n\n{num_connections} connected";
     tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}";
@@ -113,7 +115,7 @@
 
   # ===== Window Layout =====
   "wlr/taskbar" = {
-    format = " {icon} <b>{name}  {short_state}</b> \n {title:.20} ";
+    format = "{icon} <b>{name:.12}  {short_state}</b> \n {title:.15}";
     icon-size = 25;
     tooltip-format = "{title}";
     active-first = true;
@@ -123,6 +125,9 @@
     on-click = "activate";
     on-click-middle = "close";
     markup = true;
+    rewrite = {
+      "&" = "&amp;";
+    };
   };
   "cffi/niri-taskbar" = {
     module_path = ".config/waybar-cffi/niri-taskbar.so";
@@ -153,9 +158,9 @@
     };
   };
   pulseaudio = {
-    format = "{icon} {volume}% ";
-    format-bluetooth = "󰂰 {volume}% ";
-    format-muted = " {volume}% ";
+    format = "{icon} {volume}%";
+    format-bluetooth = "󰂰 {volume}%";
+    format-muted = " {volume}%";
     format-icons = {
       headphones = "";
       bluetooth = "󰥰";
@@ -173,32 +178,24 @@
 
   # ===== Custom =====
   "custom/logo" = {
-    format = " {} ";
+    format = "{}";
     return-type = "json";
     exec = "~/.config/waybar/scripts/whoami.sh";
     interval = 3600;
     tooltip = false;
   };
   "custom/weather" = {
-    format = "{} ";
+    format = "{}";
     return-type = "json";
     exec = "~/.config/waybar/scripts/weather.sh";
     interval = 10;
     tooltip = true;
   };
   "custom/powerDraw" = {
-    format = " {}w ";
+    format = " {}w";
     interval = 1;
     exec = "~/.config/waybar/scripts/powerdraw.sh";
     return-type = "json";
-  };
-  "custom/colorpicker" = {
-    format = "{} ";
-    return-type = "json";
-    interval = "once";
-    exec = "~/.config/waybar/scripts/colorpicker.sh -j";
-    on-click = "sleep 1 && ~/.config/waybar/scripts/colorpicker.sh";
-    signal = 1;
   };
   "custom/todo" = {
     exec = "~/.config/waybar/scripts/todo.sh";
@@ -209,7 +206,7 @@
 
   # ===== Misc =====
   clock = {
-    format = "{:%H:%M:%S %a %d-%b-%y} ";
+    format = "{:%H:%M:%S %a %d-%b-%y}";
     interval = 1;
     tooltip-format = "\n<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
     calendar-weeks-pos = "right";
@@ -219,7 +216,7 @@
     format-calendar-weekdays = "<span color='#aeaeae'><b>{}</b></span>";
   };
   idle_inhibitor = {
-    format = "{icon} ";
+    format = "{icon}";
     format-icons = {
       activated = "󱜤 ";
       deactivated = "󰌢 ";

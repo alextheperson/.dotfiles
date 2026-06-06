@@ -28,114 +28,147 @@
 @define-color deep-dark #11111b;
 
 * {
-  border: none;
-  font-family: "Fira Code";
+    border: none;
+    font-family: "Fira Code", "Noto Emoji";
 
-	min-height: 0;
-	margin: 0;
-	padding: 0;
-	box-shadow: none;
-	text-shadow: none;
-  border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    text-shadow: none;
+    border-radius: 0;
 }
 
 window#waybar {
-  background: @mantle;
+    background: rgba(30, 32, 48, 0.5); /*@mantle;*/
 }
 
 window#waybar.notch-buffer {
-  background: @deep-dark;
+    background: @deep-dark;
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-  font-size: 11px;
-  color: @text;
+    font-size: 11px;
+    color: @text;
+    /* padding: 5px 0; */
 }
 
 .modules-left button,
 .modules-center button,
 .modules-right button {
-  padding: 2px;
+    padding: 2px;
 }
 
-#custom-logo {
-  color: @blue;
+window#waybar.top .modules-left label.module {
+    border-right: 1px solid @surface0;
 }
 
-#clock {
-  color: @pink;
+window#waybar.top .modules-center label.module {
+    border-left: 1px solid @surface0;
+}
+window#waybar.top .modules-center label.module#custom-weather {
+    border-right: 1px solid @surface0;
 }
 
-
-#custom-weather {
-  color: @lavender;
+window#waybar.top .modules-right label.module {
+    border-left: 1px solid @surface0;
 }
 
-#disk {
-  color: @sky;
+window#waybar.top label.module {
+    padding: 0 8px;
 }
 
-#cpu {
-  color: @mauve;
+window#waybar.top-bar-notch label.module#clock {
+    margin-right: 250px;
+    border-right: 1px solid @surface0;
+}
+window#waybar.top-bar-notch label.module#custom-weather {
+    margin-right: 105px;
 }
 
-#memory {
-  color: @peach;
+label.module#custom-logo {
+    color: @blue;
 }
 
-#temperature {
-  color: @red;
+label.module#clock {
+    color: @blue;
 }
 
-#custom-powerDraw {
-  color: @yellow;
+label.module#custom-weather {
+    color: @blue;
 }
 
-#backlight {
-  color: @rosewater;
+label.module#battery {
+    color: @blue;
 }
 
-#custom-colorpicker {}
-
-#bluetooth {
-  color: @sapphire;
+label.module#cpu {
+    color: @mauve;
 }
 
-#pulseaudio {
-  color: @flamingo;
+label.module#network {
+    color: @mauve;
 }
 
-#network {
-  color: @teal;
+label.module#memory {
+    color: @sapphire;
 }
 
-#battery {
-  color: @green;
+label.module#bluetooth {
+    color: @sapphire;
 }
 
-#idle_inhibitor {
-  color: @peach;
+label.module#custom-powerDraw {
+    color: @green;
+}
+
+label.module#pulseaudio {
+    color: @green;
+}
+
+label.module#backlight {
+    color: @teal;
+}
+
+label.module#network.speed {
+    color: @teal;
+}
+
+label.module#temperature {
+    color: @yellow;
+}
+
+label.module#idle_inhibitor {
+    color: @yellow;
+}
+
+.battery-critical label.module#battery {
+    color: @red;
+}
+
+label.module#custom-workspaces {
+    color: @lavender;
 }
 
 #taskbar button.active {
-  background: @blue;
-  color: @base;
+    background: @blue;
+    color: @base;
 }
 
 #taskbar button {
-  color: @blue;
-  font-size: 8px;
+    color: @blue;
+    font-size: 8px;
 }
 
 .todo {
-  font-size: 12px;
-  margin: 10px;
+    font-size: 12px;
+    margin: 10px;
 }
 
 .workspace {
-  font-size: 8px;
+    font-size: 8px;
 }
 
 /*layout
@@ -146,9 +179,9 @@ window#waybar.notch-buffer {
 * */
 
 .flat.image-button button {
-  min-width: 10px;
-  min-height: 10px;
-  padding: 5px;
+    min-width: 10px;
+    min-height: 10px;
+    padding: 5px;
 }
 
 .flat.image-button .horizontal {

@@ -6,6 +6,8 @@
     nerd-fonts.fira-code
 
     libre-franklin 
+
+    noto-fonts-monochrome-emoji
   ];
   fonts.fontDir.enable = true;
 }

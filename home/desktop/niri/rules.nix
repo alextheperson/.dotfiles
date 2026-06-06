@@ -62,6 +62,13 @@
             }
           }
 
+          layer-rule {
+            background-effect {
+              blur true
+              xray false
+            }
+          }
+
           blur {
             passes 2
             offset 3
