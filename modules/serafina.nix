@@ -43,7 +43,7 @@
 
   # Show the notch
   boot.kernelParams = [
-    "apple_dcp.show_notch=1"
+    "appledrm.show_notch=1"
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
