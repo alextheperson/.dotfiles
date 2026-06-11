@@ -10,7 +10,6 @@
     # Utils
     libnotify
     brightnessctl
-    clang
     unzip
     zip
     libsecret
@@ -24,7 +23,6 @@
     # GUI Apps
     seahorse
     kiwix
-    kdePackages.filelight
     webcord
     prusa-slicer
     thunderbird
