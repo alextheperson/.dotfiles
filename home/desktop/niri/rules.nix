@@ -63,6 +63,10 @@
           }
 
           layer-rule {
+            // The notifications have a margin which makes blur look ugly
+            exclude namespace="notifications"
+            // Otherwise niri always blurs the area of the todo-list even when hidden
+            exclude namespace="todo-bar" layer="bottom"
             background-effect {
               blur true
               xray false
