@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ ... }:
 
 {
   programs.bash = {
@@ -42,11 +42,10 @@
       clipboard_control = "write-clipboard write-primary read-clipboard read-primary";
       background_opacity = 0.5;
       background_blur = 1;
-      # transparent_background_colors = "#24273a@0.5";
-      font_family = "FiraCode Nerd Font Mono";
+      font_family = "family=\"FiraCode Nerd Font\"";
       bold_font = "auto";
       # There isn't italic FiraCode, so this is the best I can do.
-      italic_font = "family='JetBrainsMono Nerd Font' features='+ss19 +zero +calt cv03=1 cv12=1'";
+      italic_font = "family='FantasqueSansM Nerd Font' postscript_name=FantasqueSansMNF-Italic";
       bold_italic_font = "auto";
       font_size = 10;
     };

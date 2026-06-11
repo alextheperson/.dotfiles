@@ -35,11 +35,6 @@
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
-    catppuccin = {
-      url = "github:catppuccin/nix/";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
-    };
-
     nix-alien = {
       url = "github:thiagokokada/nix-alien/";
       inputs.nixpkgs.follows = "nixpkgs-stable";
@@ -49,6 +44,11 @@
       url = "github:sodiboo/niri-flake/";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix/release-26.05";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs = inputs@{ self, nixpkgs-stable, home-manager, nixpkgs-unstable, ... }: {
@@ -79,9 +79,9 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.alex = {
-              imports = [
+                imports = [
+                inputs.stylix.homeModules.stylix
                 ./home/serafina.nix
-                inputs.catppuccin.homeModules.catppuccin
               ];
             };
 
@@ -116,8 +116,8 @@
           home-manager.useUserPackages = true;
           home-manager.users.alex = {
             imports = [
+              inputs.stylix.homeModules.stylix
               ./home/iorek.nix
-              inputs.catppuccin.homeModules.catppuccin
             ];
           };
 

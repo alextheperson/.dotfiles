@@ -7,7 +7,7 @@
     path = "/";
   };
   memory = {
-    format = " {percentage:03}%";
+    format = " {percentage:03}%";
     tooltip-format = "Memory\n{used}/{total} ({percentage:03}%)\n{avail} available\nSwap\n{swapUsed}/{swapTotal} ({swapPercentage:03}%)\n{swapAvail} available";
   };
 
